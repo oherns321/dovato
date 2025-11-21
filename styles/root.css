@@ -1,16 +1,36 @@
 :root {
-  /* Figma Design System Variables */
+  /* Dovato.com Design System Variables */
 
-  /* Colors - Figma Design System Variables */
+  /* Primary Color Palette */
+  --primary-700: #8E1D58;
+  --primary-500: #DC2759;
+  --primary-300: #EA1B75;
+  --primary-200: #FF5786;
+  --primary-100: #FFDDE7;
+
+  /* Secondary Color Palette */
+  --secondary-500: #BAD309;
+  --secondary-300: #F7FCB4;
+
+  /* Neutral Color Palette */
+  --neutral-900: #000000;
+  --neutral-800: #101720;
+  --neutral-500: #434A4F;
+  --neutral-300: #DFE5E8;
+  --neutral-200: #EFF1F3;
+  --neutral-100: #ffffff;
+
+  /* Footer Colors */
+  --footer-background: #FDEEEC;
   
   /* Text Colors */
-  --text-primary: #fff;
-  --text-secondary: #505050;
-  --text-tertiary: #b0b0b0;
-  --text-on-color: #f8f8f8;
-  --text-disabled: #b0b0b0;
-  --text-error: #b40001;
-  --text-success: #3b63fb;
+  --text-primary: var(--neutral-100);
+  --text-secondary: var(--neutral-500);
+  --text-tertiary: var(--neutral-300);
+  --text-on-color: var(--neutral-100);
+  --text-disabled: var(--neutral-300);
+  --text-error: var(--primary-500);
+  --text-success: var(--secondary-500);
   
   /* Text - Link Colors */
   --text-link-general-disabled: #b0b0b0;
@@ -23,32 +43,40 @@
   --text-link-footer-visited: #fff;
   --text-link-footer-disabled: #b0b0b0;
 
-  /* Surface Colors */
-  --surface-white: #fff;
-  --surface-black: #000;
-  --surface-grey-light: #e7e7e7;
-  --surface-disabled: #e7e7e7;
+  /* Surface Colors (Dovato.com) */
+  --surface-white: var(--neutral-100);
+  --surface-black: var(--neutral-900);
+  --surface-grey-light: var(--neutral-200);
+  --surface-disabled: var(--neutral-200);
   
-  /* Border Colors - Need to determine which border tertiary is correct */
-  --border-primary: #FFFFFF80;
-  --border-button: #fff;
-  --border-interactive: transparent;
-  --border-tertiary: #d1d1d1;
-  --border-tertiary-alt: #dadada;
-  --border-carat: #93B0D7;
+  /* Border Colors (Dovato.com) */
+  --border-primary: var(--primary-300);
+  --border-secondary: var(--neutral-300);
+  --border-button: var(--primary-300);
+  --border-interactive: var(--primary-300);
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 14px;
+  --border-radius-xlarge: 16px;
+  --border-radius-button: 12px;
   
-  /* Button Colors */
-  --button-primary: #fff;
-  --button-primary-background: transparent;
-  --button-primary-border: #fff;
-  --button-primary-hover: #000;
-  --button-primary-hover-background: #fff;
-  --button-primary-hover-border: #000;
-  --button-primary-disabled: #e7e7e7;
-  --button-secondary: #fff;
-  --button-secondary-hover: #000;
-  --button-tertiary: #fff;
-  --button-tertiary-disabled: #b0b0b0;
+  /* Button Colors (Dovato.com) */
+  --button-primary: var(--neutral-100);
+  --button-primary-background: var(--primary-300);
+  --button-primary-border: var(--primary-300);
+  --button-primary-hover: var(--primary-300);
+  --button-primary-hover-background: var(--neutral-100);
+  --button-primary-hover-border: var(--primary-300);
+  --button-primary-disabled: var(--neutral-300);
+  --button-secondary: var(--neutral-100);
+  --button-secondary-background: transparent;
+  --button-secondary-border: var(--neutral-100);
+  --button-secondary-hover: var(--primary-300);
+  --button-tertiary: var(--neutral-500);
+  --button-tertiary-background: transparent;
+  --button-tertiary-border: var(--primary-300);
+  --button-tertiary-hover-background: var(--primary-300);
+  --button-tertiary-hover: var(--neutral-100);
   
   /* Semantic Colors */
   --color-ithrive-text-900: #111827;
@@ -64,47 +92,36 @@
   --color-semantic-background: #000;  /* Figma: colors/semantic/background-color */
   
   /* Overlay Colors */
-  --overlay-dark: #0d0d0c80;            /* Figma: EYDS Colors/neutral/transparent-dark */
-  --overlay-light: #f3f2f280;           /* Light overlay equivalent */
-  --background-primary: var(--surface-black);
+  --overlay-dark: rgba(0, 0, 0, 0.45);
+  --overlay-light: rgba(0, 0, 0, 0.06);
+  --background-primary: var(--neutral-200);
 
   /* Legacy color compatibility */
-  --background-color: var(--background-primary);
-  --light-color: var(--text-on-color);
-  --dark-color: var(--text-secondary);
-  --text-color: var(--text-primary);
-  --link-color: var(--button-primary);
-  --link-hover-color: var(--button-primary-hover);
+  --background-color: var(--neutral-200);
+  --light-color: var(--neutral-100);
+  --dark-color: var(--neutral-800);
+  --text-color: var(--neutral-500);
+  --link-color: var(--primary-700);
+  --link-hover-color: var(--primary-300);
 
-  /* Typography - Font Families */
+  /* Typography - Font Families (Dovato.com) */
+  --body-font-family: 'Lato', sans-serif;
+  --heading-font-family: 'Poppins', sans-serif;
+  --utility-font-family: 'Roboto Condensed', sans-serif;
+  --display-font-family: 'Poppins-Black', sans-serif;
 
-  /* --body-font-family: "Roboto", roboto-fallback, sans-serif;
-  --heading-font-family: "Roboto Condensed", roboto-condensed-fallback, sans-serif;
-  --inter-font-family: "Inter", inter-fallback, sans-serif; /* For display typography 
- 
---body-font-family: 'Times New Roman', sans-serif;
-  --heading-font-family: 'Times New Roman', sans-serif;
-  --inter-font-family: 'Times New Roman', sans-serif;
-  
-
-  */
- 
-  --body-font-family: 'EY Interstate', sans-serif;
-  --heading-font-family: 'EY Interstate', sans-serif;
-  --inter-font-family: 'EY Interstate', sans-serif;
-
-  /* Typography - Font Sizes (Complete Figma Set - Mobile First) */
-  --font-size-heading-xxl: 48px;  /* Mobile: scaled down from 126px */
-  --font-size-heading-xl: 32px;   /* Mobile: scaled down from 60px */
-  --font-size-heading-l: 28px;    /* Mobile: scaled down from 48px */
-  --font-size-heading-m: 24px;    /* Mobile: scaled down from 32px */
-  --font-size-heading-s: 20px;    /* Mobile: scaled down from 24px */
-  --font-size-heading-xs: 16px;   /* Mobile: scaled down from 18px */
-  --font-size-body-l: 18px;       /* Mobile: scaled down from 20px */
-  --font-size-body-m: 16px;       /* Mobile: scaled down from 18px */
-  --font-size-body-s: 14px;       /* Mobile: scaled down from 16px */
-  --font-size-body-xs: 13px;      /* Mobile: scaled down from 14px */
-  --font-size-body-xxs: 11px;     /* Mobile: scaled down from 12px */
+  /* Typography - Font Sizes (Dovato.com - Mobile First) */
+  --font-size-heading-xxl: 30px;  /* Mobile: h1 */
+  --font-size-heading-xl: 22px;   /* Mobile: h2 */
+  --font-size-heading-l: 22px;    /* Mobile: h3 */
+  --font-size-heading-m: 20px;    /* Mobile: h4 */
+  --font-size-heading-s: 18px;    /* Mobile: h5 */
+  --font-size-heading-xs: 16px;   /* Mobile: h6 */
+  --font-size-body-l: 18px;       
+  --font-size-body-m: 16px;       /* Base body text */
+  --font-size-body-s: 14px;       
+  --font-size-body-xs: 12px;      
+  --font-size-body-xxs: 10px;
   --font-size-button-m: 18px;     /* Mobile: scaled down from 20px */
   --font-size-button-s: 16px;     /* Mobile: scaled down from 18px */
   --font-size-link-l: 18px;       /* Mobile: scaled down from 20px */
@@ -124,30 +141,31 @@
   --font-size-display-xs: 18px;   /* Mobile: scaled down from 24px */
   --font-size-text-xl: 16px;      /* Mobile: scaled down from 20px */
 
-  /* Typography - Font Weights (Complete Figma Set) */
-  --font-weight-headings: 600;    /* Figma: Typography/headings */
-  --font-weight-body: 400;        /* Figma: typography/font-weight/body */
-  --font-weight-body-semibold: 600; /* Figma: typography/font-weight/body-semibold */
-  --font-weight-button: 500;      /* Figma: typography/font-weight/button */
-  --font-weight-label: 500;       /* Figma: typography/font-weight/label */
-  --font-weight-link: 400;        /* Figma: typography/font-weight/link */
-  --font-weight-list: 400;        /* Figma: typography/font-weight/list */
+  /* Typography - Font Weights (Dovato.com) */
+  --font-weight-headings: 800;    /* Poppins ExtraBold for h1 */
+  --font-weight-heading-medium: 700; /* Poppins Bold for h2-h3 */
+  --font-weight-heading-semibold: 600; /* Poppins SemiBold for h4-h6 */
+  --font-weight-body: 400;        /* Lato Regular */
+  --font-weight-body-light: 300;  /* Lato Light */
+  --font-weight-button: 700;      /* Poppins Bold */
   --font-weight-bold: 700;
+  --font-weight-semibold: 600;
   --font-weight-medium: 500;
   --font-weight-regular: 400;
+  --font-weight-light: 300;
 
-  /* Typography - Line Heights (Complete Figma Set - Mobile First) */
-  --line-height-headings-xxl: 52px;  /* Mobile: scaled from 106px */
-  --line-height-headings-xl: 36px;   /* Mobile: scaled from 66px */
-  --line-height-headings-l: 32px;    /* Mobile: scaled from 53px */
-  --line-height-headings-m: 28px;    /* Mobile: scaled from 35px */
-  --line-height-headings-s: 24px;    /* Mobile: scaled from 26px */
-  --line-height-headings-xs: 20px;   /* Mobile: scaled from 22px */
-  --line-height-body-l: 24px;        /* Mobile: scaled from 30px */
-  --line-height-body-m: 22px;        /* Mobile: scaled from 27px */
-  --line-height-body-s: 20px;        /* Mobile: scaled from 24px */
-  --line-height-body-xs: 18px;       /* Mobile: scaled from 21px */
-  --line-height-body-xxs: 16px;      /* Mobile: scaled from 18px */
+  /* Typography - Line Heights (Dovato.com - Mobile First) */
+  --line-height-headings-xxl: 28px;  /* Mobile: h1 */
+  --line-height-headings-xl: 26px;   /* Mobile: h2 */
+  --line-height-headings-l: 26px;    /* Mobile: h3 */
+  --line-height-headings-m: 24px;    /* Mobile: h4 */
+  --line-height-headings-s: 22px;    /* Mobile: h5 */
+  --line-height-headings-xs: 22px;   /* Mobile: h6 */
+  --line-height-body-l: 24px;        
+  --line-height-body-m: 22px;        /* Base body line height */
+  --line-height-body-s: 20px;        
+  --line-height-body-xs: 16px;       
+  --line-height-body-xxs: 14px;
   --line-height-button-m: 22px;      /* Mobile: scaled from 27px */
   --line-height-button-s: 20px;      /* Mobile: scaled from 24px */
   --line-height-label-xs: 18px;      /* Mobile: scaled from 22.4px */
@@ -178,35 +196,35 @@
   --heading-font-size-s: var(--font-size-heading-s);     /* 24px from Figma */
   --heading-font-size-xs: var(--font-size-heading-xs);   /* 18px from Figma */
 
-  /* Layout & Spacing - Including Figma Variables */
-  --max-width-content: 1200px;
-  --max-width-nav: 1248px;
-  --max-width-nav-desktop: 1264px;
-  --teaser-min-height: 600px;
-  --teaser-min-height-desktop: 700px;
-  --teaser-min-height-desktop-large: 958px;
-  --footer-logo-min-width: 288px;
-  --footer-legal-paragraph-margin: 4px;
-  --tab-card-min-width: 282px;
+  /* Layout & Spacing (Dovato.com) */
+  --max-width-content: 1440px;
+  --max-width-container: 1170px;
   
-  /* Figma Spacing Variables */
-  --spacing-5: 20px;              /* Figma: Spacing/5 */
-  --padding-width: 32px;          /* Figma: sizing/padding/padding-width */
+  /* Dovato Spacing Scale */
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-3: 8px;
+  --spacing-4: 16px;
+  --spacing-5: 32px;
+  --spacing-6: 64px;
   
   /* Standard Spacing Scale */
   --spacing-xs: 8px;
-  --spacing-sxs: 12px;
   --spacing-s: 16px;
   --spacing-m: 24px;
   --spacing-l: 32px;
-  --spacing-xl: 40px;
-  --spacing-xxl: 48px;
-  --border-radius-small: 8px;
-  --border-radius-button: 0;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  
+  /* Padding */
+  --padding-mobile: 16px;
+  --padding-desktop: 48px;
+  --padding-large: 64px;
+  
+  /* Border Widths */
   --border-width-default: 1px;
-  --border-width-thick: 2px;
-  --border-width-thick-offset: 2px;
-  --gap-s: 8px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
 
   /* Nav - Responsive Variables from Figma */
    --nav-gap-desktop: 68px;
@@ -317,39 +335,30 @@
   }
 }
 
-/* Desktop breakpoint (900px+) - Uses Figma values */
-@media (width > 900px) {
+/* Desktop breakpoint (768px+) - Dovato.com Desktop sizes */
+@media (width >= 768px) {
   :root {
-    /* Grid variables - use full desktop margins starting at 900px */
-    --grid-columns: var(--grid-columns-desktop); /* 12 */
-    --grid-gutter: var(--grid-gutter-desktop); /* 24px */
-    --grid-margin: var(--grid-margin-desktop); /* 120px - matches Figma design */
-    --grid-max-width: none; /* Remove max-width constraint - keep full width until 1440px */
+    /* Desktop typography from Dovato.com */
+    --font-size-heading-xxl: 65px;  /* Desktop: h1 */
+    --font-size-heading-xl: 26px;   /* Desktop: h2 */
+    --font-size-heading-l: 24px;    /* Desktop: h3 */
+    --font-size-heading-m: 20px;    /* Desktop: h4 */
+    --font-size-heading-s: 18px;    /* Desktop: h5 */
+    --font-size-heading-xs: 16px;   /* Desktop: h6 */
+    --font-size-body-m: 16px;       /* Desktop body */
     
-    /* Full Figma typography values for desktop */
-    --font-size-heading-xxl: 126px; /* Full Figma size */
-    --font-size-heading-xl: 60px;   /* Full Figma size */
-    --font-size-heading-l: 48px;    /* Full Figma size */
-    --font-size-heading-m: 32px;    /* Full Figma size */
-    --font-size-heading-s: 24px;    /* Full Figma size */
-    --font-size-heading-xs: 18px;   /* Full Figma size */
-    --font-size-body-l: 20px;       /* Full Figma size */
-    --font-size-body-m: 18px;       /* Full Figma size */
-    --font-size-body-s: 16px;       /* Full Figma size */
-    --font-size-body-xs: 14px;      /* Full Figma size */
-    --font-size-body-xxs: 12px;     /* Full Figma size */
-    --font-size-button-m: 20px;     /* Full Figma size */
-    --font-size-button-s: 18px;     /* Full Figma size */
-    --font-size-display-xl: 60px;   /* Full Figma size */
-    --font-size-display-xs: 24px;   /* Full Figma size */
-    --font-size-text-xl: 20px;      /* Full Figma size */
+    /* Desktop line heights from Dovato.com */
+    --line-height-headings-xxl: 56px; /* Desktop: h1 */
+    --line-height-headings-xl: 30px;  /* Desktop: h2 */
+    --line-height-headings-l: 28px;   /* Desktop: h3 */
+    --line-height-headings-m: 24px;   /* Desktop: h4 */
+    --line-height-headings-s: 22px;   /* Desktop: h5 */
+    --line-height-headings-xs: 22px;  /* Desktop: h6 */
+    --line-height-body-m: 22px;       /* Desktop body */
     
-    /* Full Figma line heights for desktop */
-    --line-height-headings-xxl: 106px; /* Full Figma line-height */
-    --line-height-headings-xl: 66px;   /* Full Figma line-height */
-    --line-height-headings-l: 53px;    /* Full Figma line-height */
-    --line-height-headings-m: 35px;    /* Full Figma line-height */
-    --line-height-headings-s: 26px;    /* Full Figma line-height */
+    /* Desktop spacing */
+    --padding-mobile: 48px;
+    --spacing-5: 64px;
     --line-height-headings-xs: 22px;   /* Full Figma line-height */
     --line-height-body-l: 30px;        /* Full Figma line-height */
     --line-height-body-m: 27px;        /* Full Figma line-height */

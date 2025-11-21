@@ -29,7 +29,7 @@
   src: local('Arial');
 }
 
-/* Responsive typography is now handled in root.css with complete Figma integration */
+/* Responsive typography is now handled in root.css with Dovato design system */
 
 body {
   display: none;
@@ -37,9 +37,9 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--font-size-body-m);    /* 18px from Figma */
-  font-weight: var(--font-weight-body);  /* 400 from Figma */
-  line-height: var(--line-height-body-m); /* 27px from Figma */
+  font-size: var(--font-size-body-m);    /* 14px mobile, 16px desktop */
+  font-weight: var(--font-weight-body);  /* 400 */
+  line-height: var(--line-height-body-m); /* 20px mobile, 22px desktop */
   overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
@@ -79,35 +79,35 @@ h6 {
   scroll-margin: var(--spacing-xl);
 }
 
-/* Automatic Figma Typography Application */
+/* Automatic Dovato Typography Application */
 h1 { 
-  font-size: var(--font-size-heading-xxl);    /* 126px */
-  line-height: var(--line-height-headings-xxl); /* 106px */
+  font-size: var(--font-size-heading-xxl);    /* 30px mobile, 65px desktop */
+  line-height: var(--line-height-headings-xxl); /* 28px mobile, 56px desktop */
 }
 
 h2 { 
-  font-size: var(--font-size-heading-xl);     /* 60px */
-  line-height: var(--line-height-headings-xl); /* 66px */
+  font-size: var(--font-size-heading-xl);     /* 18px mobile, 26px desktop */
+  line-height: var(--line-height-headings-xl); /* 22px mobile, 30px desktop */
 }
 
 h3 { 
-  font-size: var(--font-size-heading-l);      /* 48px */
-  line-height: var(--line-height-headings-l);  /* 53px */
+  font-size: var(--font-size-heading-l);      /* 16px mobile, 24px desktop */
+  line-height: var(--line-height-headings-l);  /* 20px mobile, 28px desktop */
 }
 
 h4 { 
-  font-size: var(--font-size-heading-m);      /* 32px */
-  line-height: var(--line-height-headings-m);  /* 35px */
+  font-size: var(--font-size-heading-m);      /* 14px mobile, 20px desktop */
+  line-height: var(--line-height-headings-m);  /* 18px mobile, 24px desktop */
 }
 
 h5 { 
-  font-size: var(--font-size-heading-s);      /* 24px */
-  line-height: var(--line-height-headings-s);  /* 26px */
+  font-size: var(--font-size-heading-s);      /* 14px mobile, 18px desktop */
+  line-height: var(--line-height-headings-s);  /* 18px mobile, 22px desktop */
 }
 
 h6 { 
-  font-size: var(--font-size-heading-xs);     /* 18px */
-  line-height: var(--line-height-headings-xs); /* 22px */
+  font-size: var(--font-size-heading-xs);     /* 12px mobile, 16px desktop */
+  line-height: var(--line-height-headings-xs); /* 16px mobile, 22px desktop */
 }
 
 p,
