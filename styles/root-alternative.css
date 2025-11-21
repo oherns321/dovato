@@ -1,0 +1,367 @@
+/* Modern Light Alternative Theme */
+:root {
+  /* Figma Design System Variables - Alternative Theme */
+
+  /* Colors - Modern Light Theme */
+  
+  /* Text Colors - Alternative Theme */
+  --text-primary: #1a1a2e;           /* Deep navy for primary text */
+  --text-secondary: #4a5568;         /* Cool gray for secondary text */
+  --text-tertiary: #718096;          /* Light gray for tertiary text */
+  --text-on-color: #fff;          /* White text on colored backgrounds */
+  --text-disabled: #a0aec0;          /* Muted gray for disabled states */
+  --text-error: #e53e3e;             /* Modern red for errors */
+  --text-success: #38a169;           /* Fresh green for success */
+  
+  /* Text - Link Colors - Alternative Theme */
+  --text-link-general-disabled: #a0aec0;
+  --text-link-header-default: #1a1a2e;
+  --text-link-header-hover: #667eea;
+  --text-link-header-visited: #5a67d8;
+  --text-link-header-disabled: #a0aec0;
+  --text-link-footer-default: #1a1a2e;
+  --text-link-footer-hover: #667eea;
+  --text-link-footer-visited: #5a67d8;
+  --text-link-footer-disabled: #a0aec0;
+
+  /* Surface Colors - Alternative Theme */
+  --surface-white: #fff;          /* Pure white */
+  --surface-black: #1a1a2e;          /* Deep navy instead of black */
+  --surface-grey-light: #f7fafc;     /* Very light blue-gray */
+  --surface-disabled: #edf2f7;       /* Light gray for disabled elements */
+  
+  /* Border Colors - Alternative Theme */
+  --border-primary: #e2e8f0;         /* Light blue-gray border */
+  --border-button: #667eea;          /* Primary blue border */
+  --border-interactive: #667eea;     /* Interactive blue border */
+  --border-tertiary: #cbd5e0;        /* Medium gray border */
+  --border-tertiary-alt: #e2e8f0;    /* Light gray border alternative */
+  --border-carat: #667eea;           /* Primary blue for carets */
+  
+  /* Button Colors - Alternative Theme */
+  --button-primary: #fff;         /* White text on primary buttons */
+  --button-primary-background: #667eea; /* Vibrant blue background */
+  --button-primary-border: #667eea;  /* Matching blue border */
+  --button-primary-hover: #fff;   /* White text on hover */
+  --button-primary-hover-background: #5a67d8; /* Darker blue on hover */
+  --button-primary-hover-border: #5a67d8; /* Darker blue border on hover */
+  --button-primary-disabled: #a0aec0; /* Muted gray for disabled */
+  --button-secondary: #1a1a2e;       /* Dark text on secondary buttons */
+  --button-secondary-hover: #667eea; /* Blue text on hover */
+  --button-tertiary: #667eea;        /* Blue text for tertiary buttons */
+  --button-tertiary-disabled: #a0aec0; /* Muted gray for disabled */
+  
+  /* Semantic Colors - Alternative Theme */
+  --color-ithrive-text-900: #1a1a2e;
+  --social-icon-background-color: #667eea; /* Primary blue for social icons */
+  --social-icon-hover-color: #5a67d8;      /* Darker blue on hover */
+  --social-icon-image-size: 20px;
+  --social-icon-padding: 8px;              /* Slightly more padding */
+  
+  /* Figma Semantic Colors - Alternative Theme */
+  --color-semantic-text: #1a1a2e;        /* Deep navy text */
+  --color-semantic-light: #f7fafc;       /* Very light background */
+  --color-semantic-link: #667eea;        /* Primary blue links */
+  --color-semantic-background: #fff;  /* White background */
+  
+  /* Overlay Colors - Alternative Theme */
+  --overlay-dark: #1a1a2e80;            /* Navy overlay with transparency */
+  --overlay-light: #f7fafc80;           /* Light overlay */
+  --background-primary: #fff;         /* White primary background */
+
+  /* Legacy color compatibility - Alternative Theme */
+  --background-color: var(--background-primary);
+  --light-color: var(--text-on-color);
+  --dark-color: var(--text-secondary);
+  --text-color: var(--text-primary);
+  --link-color: var(--color-semantic-link);
+  --link-hover-color: #5a67d8;
+
+  /* Typography - Font Families - Alternative Theme */
+  --body-font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --heading-font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --inter-font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+
+  /* Typography - Font Sizes (Complete Figma Set - Mobile First) */
+  --font-size-heading-xxl: 48px;  /* Mobile: scaled down from 126px */
+  --font-size-heading-xl: 32px;   /* Mobile: scaled down from 60px */
+  --font-size-heading-l: 28px;    /* Mobile: scaled down from 48px */
+  --font-size-heading-m: 24px;    /* Mobile: scaled down from 32px */
+  --font-size-heading-s: 20px;    /* Mobile: scaled down from 24px */
+  --font-size-heading-xs: 16px;   /* Mobile: scaled down from 18px */
+  --font-size-body-l: 18px;       /* Mobile: scaled down from 20px */
+  --font-size-body-m: 16px;       /* Mobile: scaled down from 18px */
+  --font-size-body-s: 14px;       /* Mobile: scaled down from 16px */
+  --font-size-body-xs: 13px;      /* Mobile: scaled down from 14px */
+  --font-size-body-xxs: 11px;     /* Mobile: scaled down from 12px */
+  --font-size-button-m: 18px;     /* Mobile: scaled down from 20px */
+  --font-size-button-s: 16px;     /* Mobile: scaled down from 18px */
+  --font-size-link-l: 18px;       /* Mobile: scaled down from 20px */
+  --font-size-link-m: 16px;       /* Mobile: scaled down from 18px */
+  --font-size-link-s: 14px;       /* Mobile: scaled down from 16px */
+  --font-size-label-xs: 13px;     /* Mobile: scaled down from 14px */
+  --font-size-label-xxs: 11px;    /* Mobile: scaled down from 12px */
+  --font-size-list-m: 18px;       /* Mobile: scaled down from 20px */
+  --font-size-list-xs: 13px;      /* Mobile: scaled down from 14px */
+  --font-size-caption-xs: 13px;   /* Mobile: scaled down from 14px */
+  --font-size-caption-xxs: 11px;  /* Mobile: scaled down from 12px */
+  --font-size-nav-xs: 12px;
+  --font-size-nav-l: 20px;
+  
+  /* Inter Display Typography (from Figma) - Mobile scaled */
+  --font-size-display-xl: 36px;   /* Mobile: scaled down from 60px */
+  --font-size-display-xs: 18px;   /* Mobile: scaled down from 24px */
+  --font-size-text-xl: 16px;      /* Mobile: scaled down from 20px */
+
+  /* Typography - Font Weights - Alternative Theme */
+  --font-weight-headings: 700;    /* Bolder headings for modern look */
+  --font-weight-body: 400;        /* Regular body weight */
+  --font-weight-body-semibold: 600; /* Semibold for emphasis */
+  --font-weight-button: 600;      /* Slightly bolder buttons */
+  --font-weight-label: 500;       /* Medium weight labels */
+  --font-weight-link: 500;        /* Medium weight links */
+  --font-weight-list: 400;        /* Regular list weight */
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Typography - Line Heights - Alternative Theme (Improved readability) */
+  --line-height-headings-xxl: 52px;  /* Mobile: scaled from 106px */
+  --line-height-headings-xl: 38px;   /* Mobile: improved readability */
+  --line-height-headings-l: 34px;    /* Mobile: improved readability */
+  --line-height-headings-m: 30px;    /* Mobile: improved readability */
+  --line-height-headings-s: 26px;    /* Mobile: improved readability */
+  --line-height-headings-xs: 22px;   /* Mobile: improved readability */
+  --line-height-body-l: 26px;        /* Mobile: improved readability */
+  --line-height-body-m: 24px;        /* Mobile: improved readability */
+  --line-height-body-s: 22px;        /* Mobile: improved readability */
+  --line-height-body-xs: 20px;       /* Mobile: improved readability */
+  --line-height-body-xxs: 18px;      /* Mobile: improved readability */
+  --line-height-button-m: 22px;      /* Mobile: scaled from 27px */
+  --line-height-button-s: 20px;      /* Mobile: scaled from 24px */
+  --line-height-label-xs: 18px;      /* Mobile: scaled from 22.4px */
+  --line-height-label-xxs: 16px;     /* Mobile: scaled from 18px */
+  --line-height-paragraph-headings: 1.4; /* Better readability */
+  --line-height-paragraph-body: 1.6;     /* Improved body readability */
+  --line-height-nav-link: 30px;
+  --line-height-footer-column: 26px;
+
+  /* Inter Display Line Heights (from Figma) - Mobile scaled */
+  --line-height-display-xl: 44px;    /* Mobile: improved readability */
+  --line-height-display-xs: 24px;    /* Mobile: improved readability */
+  --line-height-text-xl: 22px;       /* Mobile: improved readability */
+  
+  /* Standard Line Height Ratios - Alternative Theme */
+  --line-height-default: 1.6;        /* Better readability */
+  --line-height-compact: 1.4;        /* Less compact for readability */
+  --line-height-tight: 1.2;          /* Slightly looser tight spacing */
+
+  /* Legacy font sizes for compatibility */
+  --body-font-size-m: var(--font-size-body-m);
+  --body-font-size-s: var(--font-size-body-s);
+  --body-font-size-xs: var(--font-size-body-xs);
+  --heading-font-size-xxl: var(--font-size-heading-xxl);
+  --heading-font-size-xl: var(--font-size-heading-xl);
+  --heading-font-size-l: var(--font-size-heading-l);
+  --heading-font-size-m: var(--font-size-heading-m);
+  --heading-font-size-s: var(--font-size-heading-s);
+  --heading-font-size-xs: var(--font-size-heading-xs);
+
+  /* Layout & Spacing - Alternative Theme */
+  --max-width-content: 1200px;
+  --max-width-nav: 1248px;
+  --max-width-nav-desktop: 1264px;
+  --teaser-min-height: 600px;
+  --teaser-min-height-desktop: 700px;
+  --teaser-min-height-desktop-large: 958px;
+  --footer-logo-min-width: 288px;
+  --footer-legal-paragraph-margin: 4px;
+  --tab-card-min-width: 282px;
+  
+  /* Figma Spacing Variables */
+  --spacing-5: 20px;
+  --padding-width: 32px;
+  
+  /* Standard Spacing Scale - Alternative Theme (More generous spacing) */
+  --spacing-xs: 8px;
+  --spacing-sxs: 12px;
+  --spacing-s: 20px;              /* More generous spacing */
+  --spacing-m: 28px;              /* More generous spacing */
+  --spacing-l: 36px;              /* More generous spacing */
+  --spacing-xl: 48px;             /* More generous spacing */
+  --spacing-xxl: 56px;            /* More generous spacing */
+  --border-radius-small: 12px;    /* More rounded corners */
+  --border-radius-button: 8px;    /* Rounded buttons */
+  --border-width-default: 1px;
+  --border-width-thick: 2px;
+  --border-width-thick-offset: 2px;
+  --gap-s: 12px;                  /* Slightly larger gap */
+
+  /* Nav - Responsive Variables */
+   --nav-gap-desktop: 68px;
+   --nav-gap-mobile: 24px;
+   --nav-padding-desktop: 32px;   /* More padding for modern look */
+   --nav-item-height: 56px;       /* Slightly taller nav items */
+   --nav-height: 72px;            /* Taller nav for modern feel */
+   --nav-hamburger-height: 2px;
+   --nav-hamburger-border-radius: 2px;
+   --nav-hamburger-false-top-before: -6px;
+   --nav-hamburger-false-top-after: 6px;
+   --nav-hamburger-true-top: 3px;
+   --nav-hamburger-true-top-after: unset;
+   --nav-hamburger-left: 1px;
+   --nav-hamburger-bottom: 3px;
+   --nav-top-padding: 2px;
+
+  /* Grid & Layout - Responsive Variables */
+   --grid-section-margin: 80px;   /* Larger section margins */
+  
+  /* Mobile Grid Variables (Mobile First - Default Values) */
+  --grid-columns: 4;
+  --grid-gutter: 20px;            /* Slightly larger mobile gutters */
+  --grid-margin: 20px;            /* Larger mobile margins */
+  --grid-max-width: 335px;        /* 375px viewport - (20px * 2) margins */
+  
+  /* Tablet Grid Variables */
+  --grid-columns-tablet: 8;
+  --grid-gutter-tablet: 24px;     /* Larger tablet gutters */
+  --grid-margin-tablet: 40px;     /* Larger tablet margins */
+  --grid-max-width-tablet: 688px; /* 768px - (40px * 2) */
+  
+  /* Desktop Grid Variables */
+  --grid-width-desktop: 1440px;
+  --grid-columns-desktop: 12;
+  --grid-gutter-desktop: 28px;    /* Larger desktop gutters */
+  --grid-margin-desktop: 120px;
+  --grid-max-width-desktop: 1200px;
+  
+  /* Legacy grid variables for compatibility */
+  --grid-gap: var(--grid-gutter);
+  --grid-min-column-width: 257px;
+
+  /* Content width spans - semantic grid usage */
+  --content-width-mobile: 4;
+  --content-width-tablet: 6;
+  --content-width-desktop: 9;
+
+  /* Z-index */
+  --z-index-nav: 10;              /* Higher z-index for modern layering */
+  --z-index-behind: -1;
+
+  /* Responsive breakpoint */
+  --breakpoint-desktop: 900px;
+  
+  /* Typography margins - Alternative Theme */
+  --margin-heading-top: 1em;       /* More generous heading margins */
+  --margin-heading-bottom: 0.5em;  /* More generous heading margins */
+  --margin-button-vertical: 16px;  /* Larger button margins */
+  --padding-button-horizontal: 1.5em; /* More generous button padding */
+  --padding-button-vertical: 0.75em;  /* More generous button padding */
+  
+  /* Component dimensions - Alternative Theme */
+  --logo-width: 140px;            /* Slightly larger logo */
+  --icon-height: 24px;            /* Slightly larger icons */
+  --tab-mobile-min-width: 130px;  /* Larger tab minimum width */
+}
+
+/* Responsive Typography System - Alternative Theme */
+
+/* Mobile Typography (0px+ / Default) */
+
+/* Base typography uses scaled-down versions for mobile with improved readability */
+
+/* Tablet breakpoint (768px+) - Responsive Typography */
+@media (width >= 768px) {
+  :root {
+    /* Grid variables */
+    --grid-columns: var(--grid-columns-tablet); /* 8 */
+    --grid-gutter: var(--grid-gutter-tablet); /* 24px */
+    --grid-margin: var(--grid-margin-tablet); /* 40px */
+    --grid-max-width: var(--grid-max-width-tablet); /* 688px */
+    
+    /* Responsive typography scaling for tablet - Alternative Theme */
+    --font-size-heading-xxl: 76px;  /* Intermediate size */
+    --font-size-heading-xl: 48px;   /* Intermediate size */
+    --font-size-heading-l: 38px;    /* Intermediate size */
+    --font-size-heading-m: 30px;    /* Intermediate size */
+    --font-size-heading-s: 24px;    /* Intermediate size */
+    --font-size-heading-xs: 18px;   /* Intermediate size */
+    --font-size-body-l: 19px;       /* Intermediate size */
+    --font-size-body-m: 17px;       /* Intermediate size */
+    --font-size-body-s: 15px;       /* Intermediate size */
+    --font-size-button-m: 19px;     /* Intermediate size */
+    --font-size-button-s: 17px;     /* Intermediate size */
+    
+    /* Tablet line heights - Alternative Theme */
+    --line-height-headings-xxl: 84px;  /* Improved readability */
+    --line-height-headings-xl: 54px;   /* Improved readability */
+    --line-height-headings-l: 44px;    /* Improved readability */
+    --line-height-headings-m: 36px;    /* Improved readability */
+    --line-height-headings-s: 30px;    /* Improved readability */
+    --line-height-body-l: 28px;        /* Improved readability */
+    --line-height-body-m: 26px;        /* Improved readability */
+    --line-height-button-m: 26px;      /* Improved spacing */
+    --line-height-paragraph-headings: 1.45; /* Better readability */
+    --line-height-default: 1.65;       /* Better readability */
+  }
+}
+
+/* Desktop breakpoint (900px+) - Alternative Theme */
+@media (width > 900px) {
+  :root {
+    /* Grid variables - Alternative Theme */
+    --grid-columns: var(--grid-columns-desktop); /* 12 */
+    --grid-gutter: var(--grid-gutter-desktop); /* 28px */
+    --grid-margin: var(--grid-margin-desktop); /* 120px */
+    --grid-max-width: none;
+    
+    /* Full typography values for desktop - Alternative Theme */
+    --font-size-heading-xxl: 128px; /* Slightly larger than original */
+    --font-size-heading-xl: 64px;   /* Slightly larger than original */
+    --font-size-heading-l: 50px;    /* Slightly larger than original */
+    --font-size-heading-m: 34px;    /* Slightly larger than original */
+    --font-size-heading-s: 26px;    /* Slightly larger than original */
+    --font-size-heading-xs: 20px;   /* Slightly larger than original */
+    --font-size-body-l: 21px;       /* Slightly larger than original */
+    --font-size-body-m: 19px;       /* Slightly larger than original */
+    --font-size-body-s: 17px;       /* Slightly larger than original */
+    --font-size-body-xs: 15px;      /* Slightly larger than original */
+    --font-size-body-xxs: 13px;     /* Slightly larger than original */
+    --font-size-button-m: 21px;     /* Slightly larger than original */
+    --font-size-button-s: 19px;     /* Slightly larger than original */
+    --font-size-display-xl: 64px;   /* Slightly larger than original */
+    --font-size-display-xs: 26px;   /* Slightly larger than original */
+    --font-size-text-xl: 21px;      /* Slightly larger than original */
+    
+    /* Full line heights for desktop - Alternative Theme */
+    --line-height-headings-xxl: 112px; /* Improved readability */
+    --line-height-headings-xl: 72px;   /* Improved readability */
+    --line-height-headings-l: 58px;    /* Improved readability */
+    --line-height-headings-m: 40px;    /* Improved readability */
+    --line-height-headings-s: 32px;    /* Improved readability */
+    --line-height-headings-xs: 26px;   /* Improved readability */
+    --line-height-body-l: 32px;        /* Improved readability */
+    --line-height-body-m: 29px;        /* Improved readability */
+    --line-height-body-s: 27px;        /* Improved readability */
+    --line-height-body-xs: 24px;       /* Improved readability */
+    --line-height-body-xxs: 20px;      /* Improved readability */
+    --line-height-button-m: 29px;      /* Improved spacing */
+    --line-height-button-s: 27px;      /* Improved spacing */
+    --line-height-display-xl: 76px;    /* Improved readability */
+    --line-height-display-xs: 34px;    /* Improved readability */
+    --line-height-text-xl: 32px;       /* Improved readability */
+    --line-height-paragraph-headings: 1.5; /* Better readability */
+    --line-height-paragraph-body: 1.6;     /* Better readability */
+    --line-height-default: 1.7;        /* Better readability */
+    --line-height-footer-body: 24px;   /* Improved footer readability */
+  }
+}
+
+/* Large desktop - Alternative Theme */
+@media (width >= 1440px) {
+  :root {
+    /* Apply enhanced margins for the alternative theme */
+    --grid-margin: var(--grid-margin-desktop); /* 120px */
+    --grid-max-width: var(--grid-max-width-desktop); /* 1200px */
+  }
+}

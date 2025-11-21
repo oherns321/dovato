@@ -1,0 +1,40 @@
+.modal-buttons {
+  padding: var(--spacing-l) 0;
+}
+
+.modal-buttons .modal-buttons-container {
+  display: flex;
+  gap: var(--spacing-m);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.modal-buttons .cta-button {
+  padding: var(--spacing-s) var(--spacing-l);
+  font-size: var(--font-size-body-m);
+  font-weight: 500;
+  border: 1px solid var(--surface-white);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.modal-buttons .cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.modal-buttons .cta-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (width <= 768px) {
+  .modal-buttons .modal-buttons-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-buttons .cta-button {
+    width: 100%;
+  }
+}

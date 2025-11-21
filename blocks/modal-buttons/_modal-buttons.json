@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Modal Buttons",
+      "id": "modal-buttons",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Modal Buttons",
+              "model": "modal-buttons"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "modal-buttons",
+      "fields": [
+        {
+          "component": "text",
+          "name": "button1",
+          "label": "Button 1 URL",
+          "valueType": "string",
+          "value": "#"
+        },
+        {
+          "component": "text",
+          "name": "button1Text",
+          "label": "Button 1 Text",
+          "valueType": "string",
+          "value": "Custom Modal"
+        },
+        {
+          "component": "text",
+          "name": "button2",
+          "label": "Button 2 URL",
+          "valueType": "string",
+          "value": "/modals/example"
+        },
+        {
+          "component": "text",
+          "name": "button2Text",
+          "label": "Button 2 Text",
+          "valueType": "string",
+          "value": "Fragment Modal"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

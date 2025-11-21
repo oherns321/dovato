@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Page not found</title>
+  <script type="text/javascript">
+    window.isErrorPage = true;
+    window.errorCode = '404';
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Page not found">
+  <script src="/scripts/scripts.js" type="module"></script>
+  <script type="module">
+    window.addEventListener('load', () => {
+      if (document.referrer) {
+        const { origin, pathname } = new URL(document.referrer);
+        if (origin === window.location.origin) {
+          const backBtn = document.createElement('a');
+          backBtn.classList.add('button', 'error-button-back');
+          backBtn.href = pathname;
+          backBtn.textContent = 'Go back';
+          backBtn.title = 'Go back';
+          const btnContainer = document.querySelector('.button-container');
+          btnContainer.append(backBtn);
+        }
+      }
+    });
+  </script>
+  <script type="module">
+    import { sampleRUM } from '/scripts/aem.js';
+    sampleRUM('404', { source: document.referrer });
+  </script>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    main.error {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Roboto, -apple-system, Helvetica, sans-serif;
+      color: #0D0D0C;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .error-container {
+      background-color: var(--surface-grey-light);
+      display: flex;
+      width: 100%;
+      padding: 0 32px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .error-illustration {
+      display: flex;
+      width: 100%;
+      max-width: 509px;
+      height: auto;
+      min-width: 282px;
+      aspect-ratio: 509/275;
+    }
+
+    .error-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .error-title {
+      width: 100%;
+      color: #0D0D0C;
+      text-align: center;
+      font-family: 'Roboto Condensed', -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 96px;
+      font-weight: 600;
+      line-height: 106px;
+      font-style: normal;
+    }
+
+    .error-messaging {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .error-subtitle {
+      width: 100%;
+      color: #0D0D0C;
+      text-align: center;
+      font-family: 'Roboto Condensed', -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 35px;
+      font-style: normal;
+    }
+
+    .error-description {
+      width: 100%;
+      color: #0D0D0C;
+      text-align: center;
+      font-family: Roboto, -apple-system, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      font-style: normal;
+    }
+
+    .return-button {
+      display: flex;
+      padding: 16px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px;
+      background: #769BCD;
+      color: #FFF;
+      font-family: Roboto, -apple-system, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 27px;
+      font-variant: all-small-caps;
+      text-decoration: none;
+      font-style: normal;
+      transition: background 0.3s ease;
+    }
+
+    .return-button:hover {
+      background: #5f7fad;
+    }
+
+    .return-button:active {
+      background: #4d6a94;
+    }
+
+    @media (max-width: 768px) {
+      .error-container {
+        gap: 32px;
+        padding: 0 16px;
+      }
+
+      .error-title {
+        font-size: 48px;
+        line-height: 53px;
+      }
+
+      .error-subtitle {
+        font-size: 24px;
+        line-height: 26px;
+      }
+
+      .error-description {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .return-button {
+        font-size: 18px;
+        padding: 14px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-illustration {
+        min-width: 200px;
+      }
+
+      .error-title {
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      .error-subtitle {
+        font-size: 20px;
+        line-height: 22px;
+      }
+
+      .error-description {
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/styles/lazy-styles.css">
+</head>
+<body>
+  <header></header>
+  <main class="error error-container">
+    <div class="section">
+      <div class="error-content">
+        <svg class="error-illustration" width="509" height="275" viewBox="0 0 509 275" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="315.024" cy="260.341" rx="161.977" ry="14.6588" fill="black" />
+          <path
+            d="M174.531 56.2973C188.852 31.6472 220.684 23.251 245.637 37.5678C270.589 51.8847 279.188 83.4786 264.867 108.129C250.546 132.779 218.715 141.175 193.762 126.859C168.81 112.542 160.21 80.9474 174.531 56.2973Z"
+            stroke="black" stroke-width="2" />
+          <path
+            d="M175.706 62.6598C179.497 61.5093 184.099 63.4004 188.551 67.9706C192.96 72.4977 196.994 79.4491 199.548 87.7613C202.102 96.0734 202.665 104.078 201.552 110.281C200.429 116.543 197.675 120.667 193.884 121.817C190.093 122.968 185.491 121.077 181.04 116.506C176.63 111.979 172.596 105.028 170.042 96.7157C167.488 88.4036 166.926 80.3986 168.038 74.1957C169.161 67.9338 171.915 63.8103 175.706 62.6598Z"
+            stroke="black" stroke-width="2" />
+          <path
+            d="M118.121 39.8672C128.294 57.3781 122.258 79.7744 104.631 89.8881C87.0041 100.001 64.4701 93.9977 54.297 76.4869C44.124 58.9761 50.159 36.5803 67.7857 26.4665C85.4127 16.3528 107.947 22.3564 118.121 39.8672Z"
+            stroke="black" stroke-width="2" />
+          <path
+            d="M113.919 38.0828C113.318 40.6656 110.634 42.7747 106.236 43.8702C101.895 44.9511 96.1741 44.9519 90.1227 43.5615C84.0714 42.171 78.9318 39.6746 75.5095 36.8102C72.0411 33.907 70.5616 30.8414 71.1625 28.2586C71.7634 25.6758 74.4468 23.5667 78.8455 22.4712C83.1857 21.3904 88.9064 21.3893 94.9577 22.7797C101.009 24.1701 106.149 26.6667 109.572 29.5312C113.04 32.4344 114.52 35.5 113.919 38.0828Z"
+            stroke="black" stroke-width="2" />
+          <path
+            d="M271.985 274.116C261.823 267.311 253.071 258.121 247.506 247.182C269.448 246.178 293.548 245.682 319.82 245.682C339.338 245.682 358.049 245.995 375.377 246.567C369.7 258.031 360.286 267.6 350.232 274.551C340.344 274.721 330.257 275 319.82 275C302.747 275 287.438 274.559 271.985 274.116Z"
+            fill="#D9D9D9" />
+          <path
+            d="M305.061 149.762C309.136 153.54 309.984 160.361 307.591 168.69C305.215 176.962 299.708 186.42 291.596 195.06C283.483 203.701 274.368 209.815 266.229 212.742C258.033 215.689 251.127 215.32 247.052 211.541C242.978 207.763 242.13 200.942 244.522 192.613C246.898 184.341 252.406 174.882 260.518 166.242C268.631 157.602 277.746 151.488 285.885 148.561C294.08 145.614 300.986 145.983 305.061 149.762Z"
+            stroke="black" stroke-width="2" />
+          <path
+            d="M311.362 144.348C350.472 144.348 382.167 175.854 382.167 214.706C382.167 239.351 369.414 261.037 350.102 273.605C327.341 274.038 295.324 273.854 271.789 273.055C252.944 260.409 240.559 238.994 240.559 214.706C240.559 175.854 272.253 144.348 311.362 144.348Z"
+            stroke="black" stroke-width="2" />
+        </svg>
+        <h1 class="error-title">Page Not Found</h1>
+
+        <div class="error-messaging">
+          <h2 class="error-subtitle">Error 404. The page you were looking for doesn't exist.</h2>
+          <p class="error-description">It may have been removed, had its name changed, or is temporarily unavailable.
+          </p>
+          <a href="/" class="return-button">Return Home</a>
+
+          <!--   <p class="button-container">
+            <a href="/" class="button secondary error-button-home">Go home</a>
+          </p> -->
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <footer></footer>
+</body>
+
+</html>

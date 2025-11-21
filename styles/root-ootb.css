@@ -1,0 +1,367 @@
+/* AEM Edge Delivery Services - OOTB Theme */
+:root {
+  /* OOTB Design System Variables */
+
+  /* Colors - OOTB Theme Variables */
+  
+  /* Text Colors - OOTB */
+  --text-primary: #000;           /* Black text for OOTB */
+  --text-secondary: #6b6b6b;         /* Gray secondary text */
+  --text-tertiary: #9b9b9b;          /* Light gray tertiary text */
+  --text-on-color: #fff;          /* White text on colored backgrounds */
+  --text-disabled: #ccc;          /* Light gray for disabled states */
+  --text-error: #d32f2f;             /* Standard red for errors */
+  --text-success: #388e3c;           /* Standard green for success */
+  
+  /* Text - Link Colors - OOTB */
+  --text-link-general-disabled: #ccc;
+  --text-link-header-default: #000;
+  --text-link-header-hover: #1976d2;
+  --text-link-header-visited: #7b1fa2;
+  --text-link-header-disabled: #ccc;
+  --text-link-footer-default: #000;
+  --text-link-footer-hover: #1976d2;
+  --text-link-footer-visited: #7b1fa2;
+  --text-link-footer-disabled: #ccc;
+
+  /* Surface Colors - OOTB */
+  --surface-white: #fff;          /* Pure white */
+  --surface-black: #000;          /* Pure black */
+  --surface-grey-light: #f5f5f5;     /* Very light gray */
+  --surface-disabled: #f5f5f5;       /* Light gray for disabled elements */
+  
+  /* Border Colors - OOTB */
+  --border-primary: #e0e0e0;         /* Light gray border */
+  --border-button: #1976d2;          /* Blue border for buttons */
+  --border-interactive: #1976d2;     /* Blue for interactive elements */
+  --border-tertiary: #e0e0e0;        /* Light gray border */
+  --border-tertiary-alt: #f0f0f0;    /* Very light gray border alternative */
+  --border-carat: #1976d2;           /* Blue for carets */
+  
+  /* Button Colors - OOTB */
+  --button-primary: #fff;         /* White text */
+  --button-primary-background: #1976d2; /* Blue background */
+  --button-primary-border: #1976d2;  /* Blue border */
+  --button-primary-hover: #fff;   /* White text on hover */
+  --button-primary-hover-background: #1565c0; /* Darker blue on hover */
+  --button-primary-hover-border: #1565c0; /* Darker blue border on hover */
+  --button-primary-disabled: #ccc; /* Gray for disabled buttons */
+  --button-secondary: #1976d2;       /* Blue text for secondary buttons */
+  --button-secondary-hover: #1565c0; /* Darker blue on hover */
+  --button-tertiary: #1976d2;        /* Blue text for tertiary buttons */
+  --button-tertiary-disabled: #ccc; /* Gray for disabled */
+  
+  /* Semantic Colors - OOTB */
+  --color-ithrive-text-900: #000;
+  --social-icon-background-color: #1976d2; /* Blue for social icons */
+  --social-icon-hover-color: #1565c0;      /* Darker blue on hover */
+  --social-icon-image-size: 20px;
+  --social-icon-padding: 6px;
+  
+  /* Figma Semantic Colors - OOTB */
+  --color-semantic-text: #000;        /* Black text */
+  --color-semantic-light: #fff;       /* White background */
+  --color-semantic-link: #1976d2;        /* Blue links */
+  --color-semantic-background: #fff;  /* White background */
+  
+  /* Overlay Colors - OOTB */
+  --overlay-dark: #00000080;            /* Black overlay with transparency */
+  --overlay-light: #ffffff80;           /* White overlay */
+  --background-primary: #fff;        /* White primary background */
+
+  /* Legacy color compatibility - OOTB */
+  --background-color: var(--background-primary);
+  --light-color: var(--text-on-color);
+  --dark-color: var(--text-secondary);
+  --text-color: var(--text-primary);
+  --link-color: var(--color-semantic-link);
+  --link-hover-color: #1565c0;
+
+  /* Typography - Font Families - OOTB */
+  --body-font-family: "Roboto", roboto-fallback, sans-serif;
+  --heading-font-family: "Roboto Condensed", roboto-condensed-fallback, sans-serif;
+  --inter-font-family: "Inter", inter-fallback, sans-serif;
+
+  /* Typography - Font Sizes (Complete Figma Set - Mobile First) - OOTB */
+  --font-size-heading-xxl: 48px;  /* Mobile: scaled down from 126px */
+  --font-size-heading-xl: 32px;   /* Mobile: scaled down from 60px */
+  --font-size-heading-l: 28px;    /* Mobile: scaled down from 48px */
+  --font-size-heading-m: 24px;    /* Mobile: scaled down from 32px */
+  --font-size-heading-s: 20px;    /* Mobile: scaled down from 24px */
+  --font-size-heading-xs: 16px;   /* Mobile: scaled down from 18px */
+  --font-size-body-l: 18px;       /* Mobile: scaled down from 20px */
+  --font-size-body-m: 16px;       /* Mobile: scaled down from 18px */
+  --font-size-body-s: 14px;       /* Mobile: scaled down from 16px */
+  --font-size-body-xs: 13px;      /* Mobile: scaled down from 14px */
+  --font-size-body-xxs: 11px;     /* Mobile: scaled down from 12px */
+  --font-size-button-m: 18px;     /* Mobile: scaled down from 20px */
+  --font-size-button-s: 16px;     /* Mobile: scaled down from 18px */
+  --font-size-link-l: 18px;       /* Mobile: scaled down from 20px */
+  --font-size-link-m: 16px;       /* Mobile: scaled down from 18px */
+  --font-size-link-s: 14px;       /* Mobile: scaled down from 16px */
+  --font-size-label-xs: 13px;     /* Mobile: scaled down from 14px */
+  --font-size-label-xxs: 11px;    /* Mobile: scaled down from 12px */
+  --font-size-list-m: 18px;       /* Mobile: scaled down from 20px */
+  --font-size-list-xs: 13px;      /* Mobile: scaled down from 14px */
+  --font-size-caption-xs: 13px;   /* Mobile: scaled down from 14px */
+  --font-size-caption-xxs: 11px;  /* Mobile: scaled down from 12px */
+  --font-size-nav-xs: 12px;
+  --font-size-nav-l: 20px;
+  
+  /* Inter Display Typography (from Figma) - Mobile scaled - OOTB */
+  --font-size-display-xl: 36px;   /* Mobile: scaled down from 60px */
+  --font-size-display-xs: 18px;   /* Mobile: scaled down from 24px */
+  --font-size-text-xl: 16px;      /* Mobile: scaled down from 20px */
+
+  /* Typography - Font Weights - OOTB */
+  --font-weight-headings: 600;    /* Semi-bold headings */
+  --font-weight-body: 400;        /* Regular body weight */
+  --font-weight-body-semibold: 600; /* Semi-bold for emphasis */
+  --font-weight-button: 500;      /* Medium weight buttons */
+  --font-weight-label: 500;       /* Medium weight labels */
+  --font-weight-link: 400;        /* Regular weight links */
+  --font-weight-list: 400;        /* Regular list weight */
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Typography - Line Heights - OOTB */
+  --line-height-headings-xxl: 52px;  /* Mobile: scaled from 106px */
+  --line-height-headings-xl: 36px;   /* Mobile: scaled from 66px */
+  --line-height-headings-l: 32px;    /* Mobile: scaled from 53px */
+  --line-height-headings-m: 28px;    /* Mobile: scaled from 35px */
+  --line-height-headings-s: 24px;    /* Mobile: scaled from 26px */
+  --line-height-headings-xs: 20px;   /* Mobile: scaled from 22px */
+  --line-height-body-l: 24px;        /* Mobile: scaled from 30px */
+  --line-height-body-m: 22px;        /* Mobile: scaled from 27px */
+  --line-height-body-s: 20px;        /* Mobile: scaled from 24px */
+  --line-height-body-xs: 18px;       /* Mobile: scaled from 21px */
+  --line-height-body-xxs: 16px;      /* Mobile: scaled from 18px */
+  --line-height-button-m: 22px;      /* Mobile: scaled from 27px */
+  --line-height-button-s: 20px;      /* Mobile: scaled from 24px */
+  --line-height-label-xs: 18px;      /* Mobile: scaled from 22.4px */
+  --line-height-label-xxs: 16px;     /* Mobile: scaled from 18px */
+  --line-height-paragraph-headings: 1.3; /* Mobile: tighter than desktop 1.4 */
+  --line-height-paragraph-body: 1.5;     /* Standard body line height */
+  --line-height-nav-link: 30px;
+  --line-height-footer-column: 26px;
+
+  /* Inter Display Line Heights (from Figma) - Mobile scaled - OOTB */
+  --line-height-display-xl: 42px;    /* Mobile: scaled from 72px */
+  --line-height-display-xs: 22px;    /* Mobile: scaled from 32px */
+  --line-height-text-xl: 20px;       /* Mobile: scaled from 30px */
+  
+  /* Standard Line Height Ratios - OOTB */
+  --line-height-default: 1.5;        /* Standard default line height */
+  --line-height-compact: 1.2;
+  --line-height-tight: 1;
+
+  /* Legacy font sizes for compatibility */
+  --body-font-size-m: var(--font-size-body-m);
+  --body-font-size-s: var(--font-size-body-s);
+  --body-font-size-xs: var(--font-size-body-xs);
+  --heading-font-size-xxl: var(--font-size-heading-xxl);
+  --heading-font-size-xl: var(--font-size-heading-xl);
+  --heading-font-size-l: var(--font-size-heading-l);
+  --heading-font-size-m: var(--font-size-heading-m);
+  --heading-font-size-s: var(--font-size-heading-s);
+  --heading-font-size-xs: var(--font-size-heading-xs);
+
+  /* Layout & Spacing - OOTB */
+  --max-width-content: 1200px;
+  --max-width-nav: 1248px;
+  --max-width-nav-desktop: 1264px;
+  --teaser-min-height: 600px;
+  --teaser-min-height-desktop: 700px;
+  --teaser-min-height-desktop-large: 958px;
+  --footer-logo-min-width: 288px;
+  --footer-legal-paragraph-margin: 4px;
+  --tab-card-min-width: 282px;
+  
+  /* Figma Spacing Variables - OOTB */
+  --spacing-5: 20px;
+  --padding-width: 32px;
+  
+  /* Standard Spacing Scale - OOTB */
+  --spacing-xs: 8px;
+  --spacing-sxs: 12px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 40px;
+  --spacing-xxl: 48px;
+  --border-radius-small: 4px;        /* Standard OOTB radius */
+  --border-radius-button: 4px;       /* Standard button radius */
+  --border-width-default: 1px;
+  --border-width-thick: 2px;
+  --border-width-thick-offset: 2px;
+  --gap-s: 8px;
+
+  /* Nav - Responsive Variables - OOTB */
+   --nav-gap-desktop: 68px;
+   --nav-gap-mobile: 24px;
+   --nav-padding-desktop: 28px;
+   --nav-item-height: 54px;
+   --nav-height: 64px;
+   --nav-hamburger-height: 2px;
+   --nav-hamburger-border-radius: 2px;
+   --nav-hamburger-false-top-before: -6px;
+   --nav-hamburger-false-top-after: 6px;
+   --nav-hamburger-true-top: 3px;
+   --nav-hamburger-true-top-after: unset;
+   --nav-hamburger-left: 1px;
+   --nav-hamburger-bottom: 3px;
+   --nav-top-padding: 2px;
+
+  /* Grid & Layout - Responsive Variables - OOTB */
+   --grid-section-margin: 60px;
+  
+  /* Mobile Grid Variables (Mobile First - Default Values) - OOTB */
+  --grid-columns: 4; /* Mobile: 4 columns */
+  --grid-gutter: 16px; /* Mobile: 16px gutter */
+  --grid-margin: 16px; /* Mobile: 16px side margins */
+  --grid-max-width: 343px; /* Mobile: 375px viewport - (16px * 2) margins */
+  
+  /* Tablet Grid Variables - OOTB */
+  --grid-columns-tablet: 8;
+  --grid-gutter-tablet: 16px;
+  --grid-margin-tablet: 32px;
+  --grid-max-width-tablet: 704px; /* 768px - (32px * 2) */
+  
+  /* Desktop Grid Variables - OOTB */
+  --grid-width-desktop: 1440px;
+  --grid-columns-desktop: 12;
+  --grid-gutter-desktop: 24px;
+  --grid-margin-desktop: 120px;
+  --grid-max-width-desktop: 1200px;
+  
+  /* Legacy grid variables for compatibility */
+  --grid-gap: var(--grid-gutter);
+  --grid-min-column-width: 257px;
+
+  /* Content width spans - semantic grid usage */
+  --content-width-mobile: 4;
+  --content-width-tablet: 6;
+  --content-width-desktop: 9;
+
+  /* Z-index - OOTB */
+  --z-index-nav: 5;
+  --z-index-behind: -1;
+
+  /* Responsive breakpoint */
+  --breakpoint-desktop: 900px;
+  
+  /* Typography margins - OOTB */
+  --margin-heading-top: 0.8em;
+  --margin-heading-bottom: 0.25em;
+  --margin-button-vertical: 12px;
+  --padding-button-horizontal: 1.2em;
+  --padding-button-vertical: 0.5em;
+  
+  /* Component dimensions - OOTB */
+  --logo-width: 128px;
+  --icon-height: 22px;
+  --tab-mobile-min-width: 120px;
+}
+
+/* Responsive Typography System - OOTB */
+
+/* Mobile Typography (0px+ / Default) */
+
+/* Base typography uses scaled-down versions for mobile */
+
+/* Tablet breakpoint (768px+) - Responsive Typography - OOTB */
+@media (width >= 768px) {
+  :root {
+    /* Grid variables */
+    --grid-columns: var(--grid-columns-tablet); /* 8 */
+    --grid-gutter: var(--grid-gutter-tablet); /* 16px */
+    --grid-margin: var(--grid-margin-tablet); /* 32px */
+    --grid-max-width: var(--grid-max-width-tablet); /* 704px */
+    
+    /* Responsive typography scaling for tablet - OOTB */
+    --font-size-heading-xxl: 72px;  /* Intermediate size */
+    --font-size-heading-xl: 44px;   /* Intermediate size */
+    --font-size-heading-l: 36px;    /* Intermediate size */
+    --font-size-heading-m: 28px;    /* Intermediate size */
+    --font-size-heading-s: 22px;    /* Intermediate size */
+    --font-size-heading-xs: 17px;   /* Intermediate size */
+    --font-size-body-l: 19px;       /* Intermediate size */
+    --font-size-body-m: 17px;       /* Intermediate size */
+    --font-size-body-s: 15px;       /* Intermediate size */
+    --font-size-button-m: 19px;     /* Intermediate size */
+    --font-size-button-s: 17px;     /* Intermediate size */
+    
+    /* Tablet line heights - OOTB */
+    --line-height-headings-xxl: 78px;
+    --line-height-headings-xl: 48px;
+    --line-height-headings-l: 40px;
+    --line-height-headings-m: 32px;
+    --line-height-headings-s: 26px;
+    --line-height-body-l: 26px;
+    --line-height-body-m: 24px;
+    --line-height-button-m: 24px;
+    --line-height-paragraph-headings: 1.35;
+    --line-height-default: 1.55;
+  }
+}
+
+/* Desktop breakpoint (900px+) - OOTB */
+@media (width > 900px) {
+  :root {
+    /* Grid variables - OOTB */
+    --grid-columns: var(--grid-columns-desktop); /* 12 */
+    --grid-gutter: var(--grid-gutter-desktop); /* 24px */
+    --grid-margin: var(--grid-margin-desktop); /* 120px */
+    --grid-max-width: none;
+    
+    /* Full typography values for desktop - OOTB */
+    --font-size-heading-xxl: 126px; /* Full Figma size */
+    --font-size-heading-xl: 60px;   /* Full Figma size */
+    --font-size-heading-l: 48px;    /* Full Figma size */
+    --font-size-heading-m: 32px;    /* Full Figma size */
+    --font-size-heading-s: 24px;    /* Full Figma size */
+    --font-size-heading-xs: 18px;   /* Full Figma size */
+    --font-size-body-l: 20px;       /* Full Figma size */
+    --font-size-body-m: 18px;       /* Full Figma size */
+    --font-size-body-s: 16px;       /* Full Figma size */
+    --font-size-body-xs: 14px;      /* Full Figma size */
+    --font-size-body-xxs: 12px;     /* Full Figma size */
+    --font-size-button-m: 20px;     /* Full Figma size */
+    --font-size-button-s: 18px;     /* Full Figma size */
+    --font-size-display-xl: 60px;   /* Full Figma size */
+    --font-size-display-xs: 24px;   /* Full Figma size */
+    --font-size-text-xl: 20px;      /* Full Figma size */
+    
+    /* Full line heights for desktop - OOTB */
+    --line-height-headings-xxl: 106px;
+    --line-height-headings-xl: 66px;
+    --line-height-headings-l: 53px;
+    --line-height-headings-m: 35px;
+    --line-height-headings-s: 26px;
+    --line-height-headings-xs: 22px;
+    --line-height-body-l: 30px;
+    --line-height-body-m: 27px;
+    --line-height-body-s: 24px;
+    --line-height-body-xs: 21px;
+    --line-height-body-xxs: 18px;
+    --line-height-button-m: 27px;
+    --line-height-button-s: 24px;
+    --line-height-display-xl: 72px;
+    --line-height-display-xs: 32px;
+    --line-height-text-xl: 30px;
+    --line-height-paragraph-headings: 1.4;
+    --line-height-paragraph-body: 1.5;  /* Standard body line height */
+    --line-height-default: 1.6;
+    --line-height-footer-body: 20px;
+  }
+}
+
+/* Large desktop - OOTB */
+@media (width >= 1440px) {
+  :root {
+    /* Apply standard margins for OOTB theme */
+    --grid-margin: var(--grid-margin-desktop); /* 120px */
+    --grid-max-width: var(--grid-max-width-desktop); /* 1200px */
+  }
+}

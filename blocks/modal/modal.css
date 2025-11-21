@@ -1,0 +1,77 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal dialog::backdrop {
+  background-color: rgb(19 19 19 / 75%);
+}
+
+.modal dialog {
+  overscroll-behavior: none;
+  overflow-y: hidden;
+  width: calc(100vw - 48px);
+  max-width: 900px;
+  max-height: calc(100dvh - (2 * var(--header-height)));
+  padding: 0;
+  border: 1px solid var(--dark-color);
+}
+
+.modal dialog .modal-content {
+  box-sizing: border-box;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  width: 100%;
+  max-height: calc(100dvh - (2 * var(--header-height)) - 48px);
+  padding: 24px;
+  padding-top: 0;
+  margin-top: 44px;
+}
+
+@media (width >= 900px) {
+  .modal dialog {
+    width: calc(100vw - 64px);
+  }
+  
+  .modal dialog .modal-content {
+    max-height: calc(100dvh - (2 * var(--header-height)) - 64px);
+    padding: 32px;
+    padding-top: 0;
+  }
+}
+
+.modal .close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.modal .close-button svg {
+  display: block;
+  width: 44px;
+  height: 44px;
+}
+
+.modal dialog .modal-content .button.primary {
+  background-color: var(--surface-black);
+  color: var(--surface-white);
+  border-color: var(--surface-black);
+}
+
+.modal dialog .modal-content .button.primary:hover {
+  background-color: var(--surface-white);
+  color: var(--surface-black);
+  border-color: var(--surface-black);
+}
+
+.modal dialog .section {
+  padding: 0;
+}

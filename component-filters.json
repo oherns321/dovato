@@ -1,0 +1,125 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "accordion",
+      "background-cards",
+      "button",
+      "cards",
+      "cards-enhanced",
+      "carousel",
+      "carousel-original",
+      "columns",
+      "embed",
+      "feature-cards",
+      "feature-lists",
+      "fragment",
+      "hero",
+      "image",
+      "modal-buttons",
+      "my-account",
+      "quick-access-cards",
+      "separator",
+      "super-cards",
+      "tab-cards",
+      "tabs",
+      "teaser-hero",
+      "text",
+      "title",
+      "video"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "background-cards",
+    "components": [
+      "background-card"
+    ]
+  },
+  {
+    "id": "cards-enhanced",
+    "components": [
+      "card-enhanced"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel-original",
+    "components": [
+      "carousel-original-item"
+    ]
+  },
+  {
+    "id": "carousel",
+    "components": [
+      "carousel-item"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "feature-cards",
+    "components": [
+      "feature-card"
+    ]
+  },
+  {
+    "id": "feature-lists",
+    "components": [
+      "feature-lists-item"
+    ]
+  },
+  {
+    "id": "quick-access-cards",
+    "components": [
+      "quick-access-cards-item"
+    ]
+  },
+  {
+    "id": "super-cards",
+    "components": [
+      "super-card"
+    ]
+  },
+  {
+    "id": "tab-cards",
+    "components": [
+      "tab-card"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-item"
+    ]
+  }
+]

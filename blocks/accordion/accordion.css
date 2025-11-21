@@ -1,0 +1,74 @@
+.accordion {
+  margin: var(--spacing-l) 0;
+}
+
+.accordion .accordion-heading {
+  margin-bottom: var(--spacing-m);
+  font-size: var(--font-size-heading-m);
+  font-weight: var(--heading-font-weight);
+  color: var(--text-primary);
+}
+
+ .accordion details {
+  font-size: var(--font-size-heading-s);
+
+  /* border-bottom: 1px solid var(--border-tertiary-alt); */
+}
+
+/* Applies styles only if it has sibling details */
+/* stylelint-disable-next-line no-descending-specificity */
+.accordion details + details {
+  margin-top: var(--spacing-m);
+}
+
+.accordion details p {
+  margin-bottom: var(--spacing-m);
+}
+
+.accordion details summary {
+  position: relative;
+  padding: 0 16px;
+  padding-right: 46px;
+  cursor: pointer;
+  list-style: none;
+  overflow: auto;
+  border-bottom: 1px solid var(--border-tertiary-alt);
+}
+
+/* .accordion details summary:focus,
+.accordion details summary:hover {
+  background-color: var(--light-color);
+} */
+
+.accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion details summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%) rotate(135deg);
+  width: 12px;
+  height: 12px;
+  border: 2px solid;
+  border-width: 2px 2px 0 0;
+  transition: transform 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+  margin-top: -12px;
+}
+
+.accordion details summary:hover::after {
+  border-color: var(--border-carat);
+}
+
+.accordion details[open] summary::after {
+  transform: translateY(-50%) rotate(-45deg);
+  margin-top: -6px
+}
+
+.accordion details .accordion-item-body {
+  padding: var(--spacing-s) var(--spacing-s) var(--spacing-s) var(--spacing-m);
+  font-size: var(--font-size-body-m);
+}
