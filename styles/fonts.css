@@ -4,7 +4,7 @@
 
 /* Lato - Body Font */
 @font-face {
-  font-family: 'Lato';
+  font-family: Lato;
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: Lato;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -21,7 +21,7 @@
 
 /* Poppins - Heading Font */
 @font-face {
-  font-family: 'Poppins';
+  font-family: Poppins;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -29,7 +29,7 @@
 }
 
 @font-face {
-  font-family: 'Poppins';
+  font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -37,7 +37,7 @@
 }
 
 @font-face {
-  font-family: 'Poppins';
+  font-family: Poppins;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -45,7 +45,7 @@
 }
 
 @font-face {
-  font-family: 'Poppins';
+  font-family: Poppins;
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -53,7 +53,7 @@
 }
 
 @font-face {
-  font-family: 'Poppins-Black';
+  font-family: Poppins-Black;
   font-style: normal;
   font-weight: 900;
   font-display: swap;

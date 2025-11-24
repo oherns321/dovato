@@ -13,12 +13,12 @@
   --secondary-300: #F7FCB4;
 
   /* Neutral Color Palette */
-  --neutral-900: #000000;
+  --neutral-900: #000;
   --neutral-800: #101720;
   --neutral-500: #434A4F;
   --neutral-300: #DFE5E8;
   --neutral-200: #EFF1F3;
-  --neutral-100: #ffffff;
+  --neutral-100: #fff;
 
   /* Footer Colors */
   --footer-background: #FDEEEC;
@@ -92,8 +92,8 @@
   --color-semantic-background: #000;  /* Figma: colors/semantic/background-color */
   
   /* Overlay Colors */
-  --overlay-dark: rgba(0, 0, 0, 0.45);
-  --overlay-light: rgba(0, 0, 0, 0.06);
+  --overlay-dark: rgb(0 0 0 / 45%);
+  --overlay-light: rgb(0 0 0 / 6%);
   --background-primary: var(--neutral-200);
 
   /* Legacy color compatibility */
@@ -291,6 +291,15 @@
   --logo-width: 128px;
   --icon-height: 22px;
   --tab-mobile-min-width: 120px;
+
+   /* Layout & Spacing - Including Figma Variables */
+
+  --teaser-min-height: 600px;
+  --teaser-min-height-desktop: 700px;
+  --teaser-min-height-desktop-large: 958px;
+  --footer-logo-min-width: 288px;
+  --footer-legal-paragraph-margin: 4px;
+  --tab-card-min-width: 282px;
 }
 
 /* Responsive Typography System */
@@ -353,15 +362,13 @@
     --line-height-headings-l: 28px;   /* Desktop: h3 */
     --line-height-headings-m: 24px;   /* Desktop: h4 */
     --line-height-headings-s: 22px;   /* Desktop: h5 */
-    --line-height-headings-xs: 22px;  /* Desktop: h6 */
-    --line-height-body-m: 22px;       /* Desktop body */
-    
+    --line-height-headings-xs: 22px;  /* Desktop: h6, Full Figma line-height */
+    --line-height-body-m: 27px;       /* Desktop body, Full Figma line-height */
+
     /* Desktop spacing */
     --padding-mobile: 48px;
     --spacing-5: 64px;
-    --line-height-headings-xs: 22px;   /* Full Figma line-height */
     --line-height-body-l: 30px;        /* Full Figma line-height */
-    --line-height-body-m: 27px;        /* Full Figma line-height */
     --line-height-body-s: 24px;        /* Full Figma line-height */
     --line-height-body-xs: 21px;       /* Full Figma line-height */
     --line-height-body-xxs: 18px;      /* Full Figma line-height */

@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 992px)');
 
 /**
  * Toggles all nav sections
@@ -171,67 +171,177 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // Create header structure matching Figma design
+  // Create header structure matching dovato.com - stacked sections
   block.textContent = '';
 
   const nav = document.createElement('nav');
   nav.id = 'nav';
+  nav.className = 'header-wrapper container-content';
 
-  // Create main navigation container
-  const navContainer = document.createElement('div');
-  navContainer.className = 'nav-container';
+  // ===== MAIN ROW CONTAINER (2 columns) =====
+  const mainRow = document.createElement('div');
+  mainRow.className = 'header-main-row';
 
-  // Logo section
+  // ===== LEFT COLUMN: Logo =====
+  const leftColumn = document.createElement('div');
+  leftColumn.className = 'header-left-column';
+
   const navBrand = document.createElement('div');
   navBrand.className = 'nav-brand';
 
-  const logoContainer = document.createElement('div');
-  logoContainer.className = 'logo-container';
-
-  // Create logo link
   const logoLink = document.createElement('a');
   logoLink.href = '/';
-  logoLink.setAttribute('aria-label', 'Home');
+  logoLink.setAttribute('aria-label', 'DOVATO Home');
 
-  // Create SVG logo
   const logoImg = document.createElement('img');
-  logoImg.src = '/icons/wordmark.svg';
-  logoImg.alt = 'logo';
-  logoImg.width = 354;
+  logoImg.src = '/icons/logo-dovato-dt.svg';
+  logoImg.alt = 'DOVATO (dolutegravir/lamivudine) logo';
+  logoImg.className = 'logo-desktop';
+
+  const logoImgMobile = document.createElement('img');
+  logoImgMobile.src = '/icons/Logo_Dovato_m.svg';
+  logoImgMobile.alt = 'DOVATO (dolutegravir/lamivudine) logo';
+  logoImgMobile.className = 'logo-mobile';
 
   logoLink.appendChild(logoImg);
-  logoContainer.appendChild(logoLink);
-  navBrand.appendChild(logoContainer);
+  logoLink.appendChild(logoImgMobile);
+  navBrand.appendChild(logoLink);
+  leftColumn.appendChild(navBrand);
 
-  // Navigation sections
+  // ===== RIGHT COLUMN: Utility Bar + Main Nav =====
+  const rightColumn = document.createElement('div');
+  rightColumn.className = 'header-right-column';
+
+  // Row 1: Utility Bar
+  const utilityBarRow = document.createElement('div');
+  utilityBarRow.className = 'utility-bar-row';
+
+  const utilityBar = document.createElement('div');
+  utilityBar.className = 'utility-bar';
+
+  const utilityList = document.createElement('ul');
+  const utilityItems = [
+    { label: 'Full Prescribing Info with Boxed Warning', path: 'https://gskpro.com/content/dam/global/hcpportal/en_US/Prescribing_Information/Dovato/pdf/DOVATO-PI-PIL.PDF#page=1' },
+    { label: 'Patient Info', path: 'https://gskpro.com/content/dam/global/hcpportal/en_US/Prescribing_Information/Dovato/pdf/DOVATO-PI-PIL.PDF#page=36' },
+    { label: 'For US Healthcare Professionals', path: 'https://dovatohcp.com/' },
+    { label: 'En Español', path: 'https://www.es.dovato.com/' },
+  ];
+
+  utilityItems.forEach((item) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = item.path;
+    a.textContent = item.label;
+    if (item.path.startsWith('http')) {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    }
+    li.appendChild(a);
+    utilityList.appendChild(li);
+  });
+
+  utilityBar.appendChild(utilityList);
+  utilityBarRow.appendChild(utilityBar);
+
+  // Row 2: Main Navigation + Hamburger
+  const mainNavRow = document.createElement('div');
+  mainNavRow.className = 'main-nav-row';
+
+  // Navigation sections with dropdowns
   const navSections = document.createElement('div');
   navSections.className = 'nav-sections';
 
   const navList = document.createElement('ul');
-  const navItems = ['Design Kit', 'Code Kit'];
+
+  const navItems = [
+    {
+      label: 'The DOVATO<br class="hide-mobile hide-tablet"/>Difference',
+      path: '/what-is-dovato',
+      submenu: [
+        { label: 'Clinical Studies', path: '/what-is-dovato/clinical-studies' },
+      ],
+    },
+    { label: 'People<br class="hide-mobile hide-tablet"/>Who Switched', path: '/real-stories' },
+    { label: 'Talk to<br class="hide-mobile hide-tablet"/>Your Doctor', path: '/talk-to-your-doctor-about-dovato' },
+    { label: 'Risks &<br class="hide-mobile hide-tablet"/>Side Effects', path: '/dovato-side-effects' },
+    {
+      label: 'Support &<br class="hide-mobile hide-tablet"/>Resources',
+      path: '/dovato-resources',
+      submenu: [
+        { label: 'FAQs', path: '/dovato-resources/faqs' },
+      ],
+    },
+    {
+      label: 'Living<br class="hide-mobile hide-tablet"/>With HIV',
+      path: '/living-with-hiv',
+      submenu: [
+        { label: 'New to Treatment', path: '/living-with-hiv/new-to-treatment' },
+      ],
+    },
+  ];
 
   navItems.forEach((item) => {
     const listItem = document.createElement('li');
+    listItem.className = 'nav-item';
+
     const link = document.createElement('a');
-    link.href = '#';
-    link.textContent = item;
+    link.href = item.path;
+    link.innerHTML = item.label;
     link.className = 'nav-link';
     listItem.appendChild(link);
+
+    if (item.submenu) {
+      listItem.classList.add('has-dropdown');
+
+      // Add arrow icon for dropdown toggle
+      const arrow = document.createElement('span');
+      arrow.className = 'dropdown-arrow';
+      arrow.setAttribute('role', 'button');
+      arrow.setAttribute('aria-label', 'Toggle submenu');
+      arrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Close other open dropdowns
+        navList.querySelectorAll('.nav-item.dropdown-active').forEach((openItem) => {
+          if (openItem !== listItem) {
+            openItem.classList.remove('dropdown-active');
+          }
+        });
+
+        // Toggle this dropdown
+        listItem.classList.toggle('dropdown-active');
+      });
+      listItem.appendChild(arrow);
+
+      const dropdown = document.createElement('ul');
+      dropdown.className = 'nav-dropdown';
+
+      item.submenu.forEach((subItem) => {
+        const subListItem = document.createElement('li');
+        const subLink = document.createElement('a');
+        subLink.href = subItem.path;
+        subLink.textContent = subItem.label;
+        subListItem.appendChild(subLink);
+        dropdown.appendChild(subListItem);
+      });
+
+      listItem.appendChild(dropdown);
+    }
+
     navList.appendChild(listItem);
   });
 
   navSections.appendChild(navList);
 
-  // Tools section with CTA button
-  const navTools = document.createElement('div');
-  navTools.className = 'nav-tools';
-
-  const ctaButton = document.createElement('button');
-  ctaButton.className = 'cta-button';
-  ctaButton.textContent = 'Book a demo';
-  ctaButton.type = 'button';
-
-  navTools.appendChild(ctaButton);
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navSections.contains(e.target)) {
+      navList.querySelectorAll('.nav-item.dropdown-active').forEach((openItem) => {
+        openItem.classList.remove('dropdown-active');
+      });
+    }
+  });
 
   // Mobile hamburger
   const hamburger = document.createElement('div');
@@ -241,13 +351,20 @@ export default async function decorate(block) {
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
 
-  // Assemble navigation
-  navContainer.appendChild(navBrand);
-  navContainer.appendChild(navSections);
-  navContainer.appendChild(navTools);
+  // Assemble main navigation row
+  mainNavRow.appendChild(hamburger);
+  mainNavRow.appendChild(navSections);
 
-  nav.appendChild(hamburger);
-  nav.appendChild(navContainer);
+  // Assemble right column (utility bar + main nav)
+  rightColumn.appendChild(utilityBarRow);
+  rightColumn.appendChild(mainNavRow);
+
+  // Assemble main row (left column + right column)
+  mainRow.appendChild(leftColumn);
+  mainRow.appendChild(rightColumn);
+
+  // Assemble complete header
+  nav.appendChild(mainRow);
   nav.setAttribute('aria-expanded', 'false');
 
   // Mobile behavior
