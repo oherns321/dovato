@@ -1,9 +1,8 @@
 {
   "mappings": [
-    "/content/dovato/:/",
-    "/content/aem-code-kit/aem-code-kit-config:/aem-code-kit-config.json"
+    "/content/dovato-demo/:/"
   ],
   "includes": [
-    "/content/dovato/"
+    "/content/dovato-demo/"
   ]
 }
