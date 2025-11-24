@@ -293,13 +293,9 @@
   --tab-mobile-min-width: 120px;
 
    /* Layout & Spacing - Including Figma Variables */
-
   --teaser-min-height: 600px;
   --teaser-min-height-desktop: 700px;
   --teaser-min-height-desktop-large: 958px;
-  --footer-logo-min-width: 288px;
-  --footer-legal-paragraph-margin: 4px;
-  --tab-card-min-width: 282px;
 }
 
 /* Responsive Typography System */

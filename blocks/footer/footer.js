@@ -3,107 +3,116 @@
  * @param {Element} block The footer block element
  */
 export default async function decorate(block) {
-  // Create footer structure matching Figma design
+  // Create footer structure matching dovato.com
   block.textContent = '';
 
-  // Create main footer container
-  const footerContent = document.createElement('div');
-  footerContent.className = 'footer-content';
+  const footerContainer = document.createElement('div');
+  footerContainer.className = 'footer-container container-content';
 
-  // Create grid container for all footer columns
-  const footerGrid = document.createElement('div');
-  footerGrid.className = 'footer-grid';
+  // Top Navigation Section
+  const topNav = document.createElement('nav');
+  topNav.className = 'footer-top-nav';
+  topNav.setAttribute('aria-label', 'Footer navigation');
 
-  // Social column
-  const socialColumn = document.createElement('div');
-  socialColumn.className = 'footer-column social-column';
-
-  const socialTitle = document.createElement('h6');
-  socialTitle.textContent = 'Social';
-  socialColumn.appendChild(socialTitle);
-
-  const socialIcons = document.createElement('div');
-  socialIcons.className = 'social-icons';
-
-  // Create social media icons
-  const socialPlatforms = [
-    { name: 'Facebook', icon: 'facebook' },
-    { name: 'LinkedIn', icon: 'linkedin' },
-    { name: 'Twitter', icon: 'twitter' },
-    { name: 'YouTube', icon: 'youtube' },
+  const topNavList = document.createElement('ul');
+  const topNavItems = [
+    { label: 'Home', path: '/' },
+    { label: 'The DOVATO Difference', path: '/what-is-dovato' },
+    { label: 'People Who Switched', path: '/real-stories' },
+    { label: 'Talk to Your Doctor', path: '/talk-to-your-doctor-about-dovato' },
+    { label: 'Risks & Side Effects', path: '/dovato-side-effects' },
+    { label: 'Support & Resources', path: '/dovato-resources' },
+    { label: 'Living With HIV', path: '/living-with-hiv' },
   ];
 
-  socialPlatforms.forEach((platform) => {
-    const iconButton = document.createElement('button');
-    iconButton.className = 'social-icon';
-    iconButton.setAttribute('aria-label', platform.name);
-
-    // Create SVG icon
-    const iconImg = document.createElement('img');
-    iconImg.src = `/icons/${platform.icon}.svg`;
-    iconImg.alt = platform.name;
-    iconImg.width = 20;
-    iconImg.height = 20;
-
-    iconButton.appendChild(iconImg);
-    socialIcons.appendChild(iconButton);
+  topNavItems.forEach((item) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = item.path;
+    a.textContent = item.label;
+    li.appendChild(a);
+    topNavList.appendChild(li);
   });
 
-  socialColumn.appendChild(socialIcons);
-  footerGrid.appendChild(socialColumn);
+  topNav.appendChild(topNavList);
+  footerContainer.appendChild(topNav);
 
-  // Create three placeholder columns
-  for (let i = 0; i < 3; i += 1) {
-    const column = document.createElement('div');
-    column.className = 'footer-column';
+  // Middle Section - Logo and Legal Info
+  const middleSection = document.createElement('div');
+  middleSection.className = 'footer-middle';
 
-    const title = document.createElement('h6');
-    title.textContent = 'Placeholder';
-    column.appendChild(title);
+  // Logo column
+  const logoColumn = document.createElement('div');
+  logoColumn.className = 'footer-logo-column';
 
-    const linkList = document.createElement('div');
-    linkList.className = 'footer-links';
+  const logoLink = document.createElement('a');
+  logoLink.href = 'https://viivhealthcare.com/en-us/';
+  logoLink.setAttribute('target', '_blank');
+  logoLink.setAttribute('rel', 'noopener noreferrer');
+  logoLink.setAttribute('aria-label', 'ViiV Healthcare');
 
-    // Add placeholder links
-    for (let j = 0; j < 3; j += 1) {
-      const link = document.createElement('a');
-      link.href = '#';
-      link.textContent = 'Placeholder';
-      linkList.appendChild(link);
-    }
-
-    column.appendChild(linkList);
-    footerGrid.appendChild(column);
-  }
-
-  footerContent.appendChild(footerGrid);
-
-  // Create bottom section with logo and legal content
-  const bottomSection = document.createElement('div');
-  bottomSection.className = 'footer-bottom';
-
-  // Logo section
-  const logoSection = document.createElement('div');
-  logoSection.className = 'footer-logo';
-
-  // Create SVG logo
   const logoImg = document.createElement('img');
-  logoImg.src = '/icons/wordmark.svg';
-  logoImg.alt = 'logo';
-  logoImg.width = 354;
-  logoSection.appendChild(logoImg);
+  logoImg.src = '/icons/logo-viiv.svg';
+  logoImg.alt = 'ViiV Healthcare logo';
+  logoLink.appendChild(logoImg);
+  logoColumn.appendChild(logoLink);
 
-  // Legal content
-  const legalContent = document.createElement('div');
-  legalContent.className = 'footer-legal';
-  legalContent.innerHTML = `
-    <p>Copyright © 2025 EY. All rights reserved.</p>
-    <p>Privacy / Terms of Use / Cookie preferences / Do not sell my personal information / AdChoices</p>
-  `;
+  middleSection.appendChild(logoColumn);
 
-  bottomSection.appendChild(logoSection);
-  bottomSection.appendChild(legalContent);
-  footerContent.appendChild(bottomSection);
+  // Legal text columns
+  const legalColumns = document.createElement('div');
+  legalColumns.className = 'footer-legal-columns';
 
-  block.appendChild(footerContent);
+  const legalColumn1 = document.createElement('div');
+  legalColumn1.className = 'footer-legal-column';
+  const legalText1 = document.createElement('p');
+  legalText1.innerHTML = 'This website is funded and developed by <span class="no-wrap">ViiV Healthcare.</span> This site is intended for <span class="no-wrap">US residents</span> only.';
+  legalColumn1.appendChild(legalText1);
+
+  const legalColumn2 = document.createElement('div');
+  legalColumn2.className = 'footer-legal-column';
+  const legalText2 = document.createElement('p');
+  const currentYear = new Date().getFullYear();
+  legalText2.innerHTML = `<span class="no-wrap">©${currentYear} ViiV Healthcare or licensor.<br>PMUS-DLLWCNT240084 March 2025</span><br>Produced in USA.`;
+  legalColumn2.appendChild(legalText2);
+
+  legalColumns.appendChild(legalColumn1);
+  legalColumns.appendChild(legalColumn2);
+  middleSection.appendChild(legalColumns);
+
+  footerContainer.appendChild(middleSection);
+
+  // Bottom Navigation Section
+  const bottomNav = document.createElement('nav');
+  bottomNav.className = 'footer-bottom-nav';
+  bottomNav.setAttribute('aria-label', 'Legal and privacy navigation');
+
+  const bottomNavList = document.createElement('ul');
+  const bottomNavItems = [
+    { label: 'Terms of Use', path: 'https://viivhealthcare.com/en-us/terms-of-use/' },
+    { label: 'Privacy Notice', path: 'https://viivhealthcare.com/en-us/privacy-notice/' },
+    { label: 'Consumer Health Privacy', path: 'https://viivhealthcare.com/en-us/consumer-health-privacy/' },
+    { label: 'Interest-based Ads', path: 'https://viivhealthcare.com/en-us/about-our-ads/' },
+    { label: 'Medicine Savings', path: 'https://www.viivconnect.com/' },
+    { label: 'Contact Us', path: 'https://contactus.viivhealthcare.com/consumer-contact-form/' },
+    { label: 'Unsubscribe', path: 'https://privacyportal-de.onetrust.com/webform/0a84bb21-f26f-4cf7-8095-11a164a1de5b/0999a50d-0d93-4b13-a117-f3bdff9ebbc8' },
+  ];
+
+  bottomNavItems.forEach((item) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = item.path;
+    a.textContent = item.label;
+    if (item.path.startsWith('http')) {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    }
+    li.appendChild(a);
+    bottomNavList.appendChild(li);
+  });
+
+  bottomNav.appendChild(bottomNavList);
+  footerContainer.appendChild(bottomNav);
+
+  block.appendChild(footerContainer);
 }
