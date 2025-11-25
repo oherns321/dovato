@@ -194,12 +194,12 @@ export default async function decorate(block) {
   logoLink.setAttribute('aria-label', 'DOVATO Home');
 
   const logoImg = document.createElement('img');
-  logoImg.src = '/icons/logo-dovato-dt.svg';
+  logoImg.src = 'https://main--dovato--oherns321.aem.live/icons/logo-dovato-dt.svg';
   logoImg.alt = 'DOVATO (dolutegravir/lamivudine) logo';
   logoImg.className = 'logo-desktop';
 
   const logoImgMobile = document.createElement('img');
-  logoImgMobile.src = '/icons/Logo_Dovato_m.svg';
+  logoImgMobile.src = 'https://main--dovato--oherns321.aem.live/icons/Logo_Dovato_m.svg';
   logoImgMobile.alt = 'DOVATO (dolutegravir/lamivudine) logo';
   logoImgMobile.className = 'logo-mobile';
 

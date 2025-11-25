@@ -135,7 +135,8 @@
 }
 
 .teaser-hero .button-container .button.primary:hover {
-  background-color: rgb(255 255 255 / 10%);
+  background-color: rgb(234 27 117);
+  border-color: rgb(234 27 117);
   color: rgb(255 255 255);
 }
 

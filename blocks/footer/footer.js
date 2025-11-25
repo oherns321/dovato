@@ -52,7 +52,7 @@ export default async function decorate(block) {
   logoLink.setAttribute('aria-label', 'ViiV Healthcare');
 
   const logoImg = document.createElement('img');
-  logoImg.src = '/icons/logo-viiv.svg';
+  logoImg.src = 'https://main--dovato--oherns321.aem.live/icons/logo-viiv.svg';
   logoImg.alt = 'ViiV Healthcare logo';
   logoLink.appendChild(logoImg);
   logoColumn.appendChild(logoLink);
