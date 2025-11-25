@@ -21,11 +21,11 @@
       "id": "isi",
       "fields": [
         {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "component": "reference",
+          "valueType": "string",
+          "name": "fileReference",
+          "label": "Content fragment file",
+          "multi": false
         }
       ]
     }
