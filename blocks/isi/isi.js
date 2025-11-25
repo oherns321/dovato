@@ -2,10 +2,10 @@
 import { isAuthorEnvironment, moveInstrumentation } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
-  const aemauthorurl = 'https://author-p7906-e91530.adobeaemcloud.com';
-  const aempublishurl = 'https://publish-p7906-e91530.adobeaemcloud.com';
-  const persistedquery = '/graphql/execute.json/sibe/getISITextByPath';
-  const contentPath = '/content/dam/sibe/isi/indication-and-important-safety-information';
+  const aemauthorurl = 'https://author-p7906-e1488805.adobeaemcloud.com';
+  const aempublishurl = 'https://publish-p7906-e1488805.adobeaemcloud.com';
+  const persistedquery = '/graphql/execute.json/dovato-demo/getISI';
+  const contentPath = '/content/dam/dovato-demo/dovato';
   const variationname = block
     .querySelector(':scope div:nth-child(2) > div')
     ?.textContent?.trim()
@@ -26,7 +26,7 @@ export default async function decorate(block) {
     .then((contentfragment) => {
       let isi = '';
       if (contentfragment.data) {
-        isi = contentfragment.data.isiTextByPath.item;
+        isi = contentfragment?.data?.isiTextList?.items[0];
       }
       return isi;
     });
@@ -36,7 +36,7 @@ export default async function decorate(block) {
   block.innerHTML = `
   <div class='isi-content block' data-aue-resource=${itemId} data-aue-label="isi content fragment" data-aue-type="reference" data-aue-filter="cf">
 		<div class='isi-detail'>
-          <p data-aue-prop="ISI_Text" data-aue-label="ISI_Text" data-aue-type="richtext">${cfReq?.ISI_Text?.html}</p>
+          <p data-aue-prop="isi_text" data-aue-label="isi_text" data-aue-type="richtext">${cfReq?.isi_text?.html}</p>
       </div>
   </div>
 	`;

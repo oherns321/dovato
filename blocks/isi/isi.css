@@ -1,59 +1,19 @@
-.isi-wraper{
+.isi-wrapper {
   max-width: 100%;
 }
 
-.isi {
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 16px;
-  position: relative;
-  max-height: 140px;
-  overflow: auto;
-  scroll-behavior: smooth;
-  margin-top: 10px;
+.isi-wrapper h5 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-bottom: 8px;
+  margin-top: 0;
+  color: #ea1b75;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
+.isi-wrapper p {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 8px;
+  color: #434a4f;
 }
-
-.isi p {
-  position: relative;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: var(--footnote-microcopy-font-family);
-  font-weight: var(--footnote-microcopy-font-weight);
-  color: var(--body-textbody-color);
-  font-size: var(--footnote-microcopy-font-size);
-  letter-spacing: var(--footnote-microcopy-letter-spacing);
-  line-height: var(--footnote-microcopy-line-height);
-  font-style: var(--footnote-microcopy-font-style);
-}
-
-.isi ul {
-  position: relative;
-  align-self: stretch;
-  margin-top: -1.00px;
-  font-family: var(--footnote-microcopy-it-font-family);
-  font-weight: var(--footnote-microcopy-it-font-weight);
-  color: var(--body-textbody-color);
-  font-size: var(--footnote-microcopy-it-font-size);
-  letter-spacing: var(--footnote-microcopy-it-letter-spacing);
-  line-height: var(--footnote-microcopy-it-line-height);
-  font-style: var(--footnote-microcopy-font-style);
-}
-
-.isi .div {
-  position: relative;
-  align-self: stretch;
-  font-family: var(--body-font-family);
-  font-weight: 400;
-  color: var(--body-textbody-color);
-  font-size: 10.4px;
-  letter-spacing: 0;
-  line-height: 10.4px;
-}
-
