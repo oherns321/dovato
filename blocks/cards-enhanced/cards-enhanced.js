@@ -92,21 +92,24 @@ function extractCardData(element, row) {
       const hasCtaProp = cell.hasAttribute('data-aue-prop')
                         && cell.getAttribute('data-aue-prop').includes('Cta');
 
-      if (hasHeadingProp || (index === 0 && !cardData.heading)) {
-        // First cell or explicitly marked as heading
+      if (hasHeadingProp) {
+        // Explicitly marked as heading
         cardData.heading = innerHTML;
-      } else if (hasBodyProp || (!cardData.body && content.length > cardData.heading.length)) {
-        // Body content (usually longer) or explicitly marked
+      } else if (hasBodyProp) {
+        // Explicitly marked as body
         cardData.body = innerHTML;
-      } else if (hasCtaProp || (!cardData.ctaText && content.length < 50)) {
-        // Short content for CTA text or explicitly marked
+      } else if (hasCtaProp) {
+        // Explicitly marked as CTA text
         cardData.ctaText = content;
-      } else if (!cardData.heading && content.length < 100) {
-        // Fallback: short content as heading
+      } else if (!cardData.heading) {
+        // First text content becomes heading
         cardData.heading = innerHTML;
       } else if (!cardData.body) {
-        // Fallback: remaining content as body
+        // Second text content becomes body
         cardData.body = innerHTML;
+      } else if (!cardData.ctaText && content.length < 50) {
+        // Short remaining content becomes CTA text
+        cardData.ctaText = content;
       }
     }
   });

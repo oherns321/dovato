@@ -3,6 +3,8 @@
 .cards-enhanced-container {
   background-color: var(--neutral-200) !important;
   padding-bottom: unset !important;
+  padding-left: unset !important;
+  padding-right: unset !important;
 }
 
 .cards-enhanced {
@@ -178,16 +180,16 @@
 }
 
 .cards-enhanced .card-buttons .button-secondary {
+  background-color: var(--button-primary-background);
+  color: var(--text-on-color);
+  border-color: var(--button-primary-background);
+}
+
+.cards-enhanced .card-buttons .button-secondary:hover {
   background-color: transparent;
   color: var(--primary-200);
   border: 2px solid var(--primary-200);
   border-radius: 8px;
-}
-
-.cards-enhanced .card-buttons .button-secondary:hover {
-  background-color: var(--button-primary-background);
-  color: var(--text-on-color);
-  border-color: var(--button-primary-background);
 }
 
 /* Mobile Responsive Design (default) */
@@ -301,4 +303,10 @@
   background-color: transparent;
   border-color: var(--text-disabled);
   color: var(--text-secondary);
+}
+
+main > .section.cards-enhanced-container > div {
+    padding-left: unset !important;
+    padding-right: unset !important;
+    max-width: max-content !important;
 }
