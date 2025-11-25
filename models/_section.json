@@ -73,6 +73,7 @@
         "fragment",
         "hero",
         "image",
+        "isi",
         "modal-buttons",
         "my-account",
         "quick-access-cards",
@@ -83,8 +84,7 @@
         "teaser-hero",
         "text",
         "title",
-        "video",
-        "isi"
+        "video"
       ]
     }
   ]
