@@ -66,7 +66,7 @@ function extractCardData(element, row) {
 
   // For XWalk items, fields are typically in separate cells
   // Order: cardImage, cardHeading, cardBody, cardCta, cardCtaText
-  cells.forEach((cell, index) => {
+  cells.forEach((cell) => {
     const content = cell.textContent.trim();
     const innerHTML = cell.innerHTML.trim();
     const link = cell.querySelector('a');
