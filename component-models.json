@@ -695,6 +695,18 @@
     ]
   },
   {
+    "id": "isi",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Content fragment file",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "modal-buttons",
     "fields": [
       {
