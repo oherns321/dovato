@@ -1,12 +1,12 @@
 /* Cards Enhanced Block - Adobe EDS with Figma Design System */
 
 .cards-enhanced-container {
-  background-color: var(--surface-black);
+  background-color: var(--neutral-200) !important;
   padding-bottom: unset !important;
 }
 
 .cards-enhanced {
-  background-color: var(--surface-black);
+  background-color: var(--neutral-200);
   color: var(--text-on-color);
 
   /* padding: var(--spacing-xl) var(--grid-margin); */
@@ -67,12 +67,10 @@
   grid-column: span var(--grid-columns); /* Mobile: span all 4 columns */
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
   position: relative;
-  
-  /* Create gradient border container - gradient from top to bottom */
-  background: linear-gradient(to bottom, #32FFFF, #B4FF00, #FFD500);
-  padding: 4px; /* This creates the 4px border effect */
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
 }
 
 /* Card Type Default */
@@ -82,15 +80,28 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background: var(--surface-black);
+}
+
+/* Card Image */
+.cards-enhanced .card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cards-enhanced .card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* Card Content */
 .cards-enhanced .card-content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-l);
-  padding: var(--padding-width);
+  gap: var(--spacing-m);
+  padding: var(--spacing-l);
   height: 100%;
 }
 
@@ -107,7 +118,7 @@
   font-weight: var(--font-weight-headings);
   font-size: var(--font-size-heading-l);
   line-height: var(--line-height-headings-l);
-  color: var(--text-on-color);
+  color: #000;
   margin: 0;
   flex: 1;
 }
@@ -124,7 +135,7 @@
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-body-l);
   line-height: var(--line-height-body-l);
-  color: var(--text-on-color);
+  color: #000;
   flex: 1;
 }
 
@@ -138,45 +149,45 @@
 }
 
 .cards-enhanced .button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xs);
   font-family: var(--body-font-family);
-  font-weight: var(--font-weight-button); /* 500 - matches Figma medium */
-  font-size: var(--font-size-button-m); /* 20px from Figma */
-  line-height: var(--line-height-button-m); /* 27px from Figma */
+  font-weight: var(--font-weight-button);
+  font-size: var(--font-size-button-s);
+  line-height: var(--line-height-button-s);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
 
-  /* Figma button padding: 24px horizontal, 16px vertical */
-  padding: 16px 24px;
+.cards-enhanced .card-buttons .button-primary {
+  background-color: transparent;
+  color: var(--primary-200);
+  border: 2px solid var(--primary-200);
+  border-radius: 8px;
+}
 
-  /* No corner radius */
-  border-radius: 0;
+.cards-enhanced .card-buttons .button-primary:hover {
+  background-color: var(--button-primary-hover-background);
+  color: #fff;
+  border: 2px solid var(--button-primary-hover-background);
 }
 
 .cards-enhanced .card-buttons .button-secondary {
   background-color: transparent;
-  color: var(--text-on-color);
-  border: 2px solid var(--text-on-color);
-  border-radius: 0;
+  color: var(--primary-200);
+  border: 2px solid var(--primary-200);
+  border-radius: 8px;
 }
 
 .cards-enhanced .card-buttons .button-secondary:hover {
-  background-color: var(--button-primary);
+  background-color: var(--button-primary-background);
   color: var(--text-on-color);
-  border-color: var(--button-primary);
-  border-radius: 0;
-}
-
-.cards-enhanced .card-buttons a.button-secondary:hover,
-.cards-enhanced .card-buttons a.button.button-secondary:hover {
-  background-color: var(--button-primary) !important;
-  color: var(--text-on-color) !important;
-  border-color: var(--button-primary) !important;
-  border-radius: 0 !important;
+  border-color: var(--button-primary-background);
 }
 
 /* Mobile Responsive Design (default) */

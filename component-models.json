@@ -305,6 +305,14 @@
     "id": "card-enhanced",
     "fields": [
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "cardImage",
+        "label": "Card Image",
+        "description": "Image displayed at the top of the card",
+        "required": false
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "cardHeading",

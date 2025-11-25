@@ -57,6 +57,7 @@ function isCardItemRow(cell) {
 function extractCardData(element, row) {
   const cells = [...row.children];
   const cardData = {
+    image: null,
     heading: '',
     body: '',
     cta: null,
@@ -64,16 +65,21 @@ function extractCardData(element, row) {
   };
 
   // For XWalk items, fields are typically in separate cells
-  // Order: cardHeading, cardBody, cardCta, cardCtaText
+  // Order: cardImage, cardHeading, cardBody, cardCta, cardCtaText
   cells.forEach((cell, index) => {
     const content = cell.textContent.trim();
     const innerHTML = cell.innerHTML.trim();
     const link = cell.querySelector('a');
+    const img = cell.querySelector('img');
+    const picture = cell.querySelector('picture');
 
     // Skip empty cells
-    if (!content && !link) return;
+    if (!content && !link && !img && !picture) return;
 
-    if (link) {
+    if (picture || img) {
+      // This cell contains an image
+      cardData.image = picture || img;
+    } else if (link) {
       // This cell contains a CTA link
       cardData.cta = link.cloneNode(true);
       cardData.ctaText = link.textContent.trim();
@@ -140,16 +146,26 @@ function createCardElement(cardData, index, originalRow = null) {
   const cardDiv = document.createElement('div');
   cardDiv.className = 'card-type-default';
 
-  const cardContent = document.createElement('div');
-  cardContent.className = 'card-content';
-
   // Handle case where cardData might be null or empty
   const safeCardData = cardData || {
+    image: null,
     heading: '',
     body: '',
     cta: null,
     ctaText: '',
   };
+
+  // Card image - display at top if present (dovato.com style)
+  if (safeCardData.image) {
+    const imageDiv = document.createElement('div');
+    imageDiv.className = 'card-image';
+    const clonedImage = safeCardData.image.cloneNode(true);
+    imageDiv.appendChild(clonedImage);
+    cardDiv.appendChild(imageDiv);
+  }
+
+  const cardContent = document.createElement('div');
+  cardContent.className = 'card-content';
 
   // Card heading - create placeholder if empty for Universal Editor
   const headingDiv = document.createElement('div');
@@ -167,22 +183,16 @@ function createCardElement(cardData, index, originalRow = null) {
   headingDiv.appendChild(headingElement);
   cardContent.appendChild(headingDiv);
 
-  // Card body text - create placeholder if empty for Universal Editor
-  const textDiv = document.createElement('div');
-  textDiv.className = 'card-text';
-  const textElement = document.createElement('div');
-  textElement.className = 'card-body';
-
+  // Card body text - only render if content exists
   if (safeCardData.body) {
+    const textDiv = document.createElement('div');
+    textDiv.className = 'card-text';
+    const textElement = document.createElement('div');
+    textElement.className = 'card-body';
     textElement.innerHTML = safeCardData.body;
-  } else {
-    // Empty placeholder for Universal Editor
-    textElement.innerHTML = '';
-    textElement.setAttribute('data-placeholder', 'Add body text...');
+    textDiv.appendChild(textElement);
+    cardContent.appendChild(textDiv);
   }
-
-  textDiv.appendChild(textElement);
-  cardContent.appendChild(textDiv);
 
   // Card button/CTA - always create container for Universal Editor
   const buttonDiv = document.createElement('div');
