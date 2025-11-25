@@ -132,9 +132,9 @@ pre {
   white-space: pre;
 }
 
-main > div {
+/* main > div {
   margin: var(--spacing-xl) var(--spacing-s);
-}
+} */
 
 input,
 textarea,

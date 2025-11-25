@@ -14,99 +14,112 @@
 .teaser-hero {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  min-height: var(--teaser-min-height);
-  background-color: var(--text-primary);
+  justify-content: normal;
+  min-height: 650px;
+  height: 650px;
+  background-color: transparent;
   background-size: cover;
   background-position: var(--teaser-background-position, center);
   background-repeat: no-repeat;
+  padding: 0;
 }
 
+/* Background image wrapper - positioned absolutely like dovato.com */
 .teaser-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: var(--overlay-dark); /* Use Figma design system variable */
-  z-index: 1;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .teaser-hero.no-overlay::before {
-  opacity: 0;
+  opacity: 1; /* Keep background visible */
 }
 
 .teaser-hero .teaser-hero-content {
   position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(var(--grid-columns), 1fr);
-  gap: var(--spacing-s); /* 16px - matches Figma spacing between content sections */
-  max-width: var(--grid-max-width);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  max-width: 100%;
   width: 100%;
-  margin: 0 auto; /* Center the content */
-  padding: 0 var(--grid-margin); /* Apply responsive margins to content */
+  margin: 0;
+  padding: 0 var(--grid-margin);
   color: var(--text-on-color);
 }
 
 /* Header content */
 .teaser-hero .header-content {
-  grid-column: 1 / -1; /* Full width on mobile */
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 0;
 }
 
 .teaser-hero h1 {
-  /* h1 automatically gets Figma typography - only override what's different */
+  font-family: Poppins, var(--heading-font-family);
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 56px;
   margin: 0;
-  color: var(--text-on-color);
+  padding-left: 30px;
+  color: rgb(234 27 117);
 }
 
 .teaser-hero .subheader {
-  font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-headings);
-  font-size: var(--font-size-heading-m); /* 32px from Figma */
-  line-height: var(--line-height-headings-m); /* 35px from Figma */
+  font-family: Poppins, var(--heading-font-family);
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 0;
   margin: 0;
-  color: var(--text-on-color);
+  padding-left: 30px;
+  color: rgb(234 27 117);
 }
 
 /* Specific styling for h1 elements within the subheader div */
 .teaser-hero .subheader h1 {
-  font-family: inherit; /* Inherit from .subheader */
-  font-weight: inherit; /* Inherit from .subheader */
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
   margin: 0;
-  color: var(--text-tertiary); /* Different color for h1 in subheader */
+  padding-left: 0;
+  color: inherit;
 }
 
 /* Body text */
 .teaser-hero .body-text {
-  grid-column: 1 / -1; /* Full width on mobile */
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-body);
-  font-size: var(--font-size-body-l); /* 20px from Figma */
-  line-height: var(--line-height-body-l); /* 30px from Figma */
+  font-size: var(--font-size-body-l);
+  line-height: var(--line-height-body-l);
   margin: 0;
+  padding-left: 30px;
 }
 
 /* Button container */
 .teaser-hero .button-container {
-  grid-column: 1 / -1; /* Full width on mobile */
-  display: flex;
+  display: inline-flex;
   gap: var(--spacing-s);
   flex-wrap: wrap;
+  margin-left: 30px;
 }
 
 .teaser-hero .button-container .button {
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
   font-family: var(--body-font-family);
-  font-size: var(--font-size-button-m);
-  font-weight: var(--font-weight-button);
+  font-size: 16px;
+  font-weight: 700;
   line-height: var(--line-height-button-m);
-  padding: var(--spacing-s) var(--spacing-m);
-  border-radius: 0;
+  padding: 12px;
+  border-radius: 12px;
   letter-spacing: 0.02em;
   text-decoration: none;
   cursor: pointer;
@@ -114,75 +127,77 @@
 }
 
 .teaser-hero .button-container .button.primary {
-  background-color: var(--button-primary-background);
-  color: var(--button-primary);
-  border: var(--button-primary-border) solid var(--border-width-default);
+  background-color: rgb(0 0 0 / 0%);
+  color: rgb(255 255 255);
+  border: 1px solid rgb(255 255 255);
 }
 
 .teaser-hero .button-container .button.primary:hover {
-  background-color: var(--button-primary-hover-background);
-  color: var(--button-primary-hover);
+  background-color: rgb(255 255 255 / 10%);
+  color: rgb(255 255 255);
 }
 
 .teaser-hero .button-container .button.secondary {
   background-color: transparent;
-  color: var(--text-on-color);
-  border: var(--border-width-thick) solid var(--text-on-color);
+  color: rgb(255 255 255);
+  border: 1px solid rgb(255 255 255);
 }
 
 .teaser-hero .button-container .button.secondary:hover {
-  background-color: var(--text-on-color);
-  color: var(--button-secondary-hover);
+  background-color: rgb(255 255 255 / 10%);
+  color: rgb(255 255 255);
 }
 
 /* Tablet adjustments */
 @media (width >= 768px) {
   .teaser-hero {
-    padding-top: 64px;
-    min-height: var(--teaser-min-height-desktop);
+    min-height: 650px;
+    height: 650px;
   }
 
-  /* Tablet: Use responsive column spans (8 columns available) */
-  .teaser-hero .header-content {
-    grid-column: span var(--content-width-tablet); /* 6 out of 8 columns on tablet */
+  .teaser-hero h1 {
+    font-size: 55px;
+    line-height: 50px;
   }
   
-  .teaser-hero .body-text {
-    grid-column: span var(--content-width-tablet); /* 6 out of 8 columns on tablet for readability */
+  .teaser-hero .subheader {
+    font-size: 55px;
   }
-  
-  .teaser-hero .button-container {
-    grid-column: span var(--grid-columns-tablet); /* Full width for buttons on tablet */
-  }
-
-  /* Typography automatically scales via design system - no overrides needed */
 }
 
 /* Desktop adjustments */
 @media (width >= 900px) {
   .teaser-hero {
-    padding-top: 64px;
-    min-height: var(--teaser-min-height-desktop-large); /* Match Figma aspect ratio 3:2 (1440x958) */
+    min-height: 650px;
+    height: 650px;
   }
 
-  /* Use Figma grid system on desktop */
-  .teaser-hero .header-content {
-    grid-column: span var(--content-width-desktop); /* 8 columns out of 12 - matches Figma design */
+  .teaser-hero h1 {
+    font-size: 65px;
+    line-height: 56px;
   }
   
-  .teaser-hero .body-text {
-    grid-column: span var(--content-width-desktop); /* 8 columns out of 12 - same as header */
+  .teaser-hero .subheader {
+    font-size: 65px;
   }
-  
-  .teaser-hero .button-container {
-    grid-column: span var(--grid-columns-desktop); /* Full width for buttons */
-  }
-
-  /* Typography automatically uses full Figma values via design system */
 }
 
 /* Mobile responsive */
 @media (width < 768px) {
+  .teaser-hero {
+    min-height: 500px;
+    height: auto;
+  }
+
+  .teaser-hero h1 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  .teaser-hero .subheader {
+    font-size: 40px;
+  }
+
   .teaser-hero .header-content {
     max-width: 100%;
   }
@@ -190,8 +205,6 @@
   .teaser-hero .body-text {
     max-width: 100%;
   }
-
-  /* Typography automatically optimized for mobile via design system */
 
   .teaser-hero .button-container {
     flex-direction: column;
@@ -206,21 +219,22 @@
 
 /* Dark variant support */
 .teaser-hero.dark {
-  background-color: var(--text-primary);
+  background-color: transparent;
 }
 
 .teaser-hero.dark::before {
-  background-color: var(--overlay-dark); /* Use Figma design system variable */
+  /* Keep background image visible, no dark overlay */
 }
 
 /* Height variants */
 .teaser-hero.height-fixed {
-  /* Explicitly set fixed height behavior (same as default) */
-  min-height: var(--teaser-min-height);
+  min-height: 650px;
+  height: 650px;
 }
 
 .teaser-hero.height-fit-content {
   min-height: auto;
+  height: auto;
 }
 
 .teaser-hero.height-fit-content .teaser-hero-content {
@@ -228,25 +242,8 @@
   padding-bottom: var(--spacing-xl);
 }
 
-/* Responsive height adjustments for fixed height */
-@media (width >= 768px) {
-  .teaser-hero.height-fixed {
-    min-height: var(--teaser-min-height-desktop);
-  }
-}
-
-@media (width >= 900px) {
-  .teaser-hero.height-fixed {
-    min-height: var(--teaser-min-height-desktop-large);
-  }
-}
-
 /* Responsive height adjustments for fit-content */
 @media (width >= 768px) {
-  .teaser-hero.height-fit-content {
-    padding: 0;
-  }
-  
   .teaser-hero.height-fit-content .teaser-hero-content {
     padding-top: calc(var(--spacing-xl) * 1.5);
     padding-bottom: calc(var(--spacing-xl) * 1.5);
@@ -254,10 +251,6 @@
 }
 
 @media (width >= 900px) {
-  .teaser-hero.height-fit-content {
-    padding: 0;
-  }
-  
   .teaser-hero.height-fit-content .teaser-hero-content {
     padding-top: calc(var(--spacing-xl) * 2);
     padding-bottom: calc(var(--spacing-xl) * 2);
