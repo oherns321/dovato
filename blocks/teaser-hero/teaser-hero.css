@@ -79,7 +79,9 @@
   line-height: 0;
   margin: 0;
   padding-left: 30px;
-  color: rgb(234 27 117);
+  color: #fff;
+  padding-top: 28px;
+  padding-bottom: 20px;
 }
 
 /* Specific styling for h1 elements within the subheader div */
@@ -97,8 +99,8 @@
 .teaser-hero .body-text {
   font-family: var(--body-font-family);
   font-weight: var(--font-weight-body);
-  font-size: var(--font-size-body-l);
-  line-height: var(--line-height-body-l);
+  font-size: 26px;
+  line-height: 30px;
   margin: 0;
   padding-left: 30px;
 }
